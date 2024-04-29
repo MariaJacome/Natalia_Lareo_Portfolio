@@ -13,7 +13,7 @@
     min-width: 187.5rem;
     height: 55vh;
     display: grid;
-    grid-template-columns: 0.5fr 0.25fr 0.25fr 0.5fr 0.25fr 0.25fr 0.5fr 0.5fr;
+    grid-template-columns: 0.5fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.5fr 0.25fr 0.5fr 0.25fr ;
     gap: 0.5rem;
     transition: all 0.5s ease-in-out;
     transform: translateX(0%);
