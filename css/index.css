@@ -1,0 +1,47 @@
+.Background{
+    background-color: var(--c-primary);
+}
+
+.Main-section{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.Section-h1{
+    font-size: 1.5rem;
+    color: var(--c-secondary);
+}
+
+.Section-name{
+    min-height: 75vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.Span-home{
+    font-size: 20rem;
+    line-height: 15rem;
+    color: var(--c-secondary);
+}
+
+
+@media (max-width: 830px){
+    .Main-section{
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px){
+    .Main-section{
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+}
+
+
