@@ -10,7 +10,7 @@
 
 .Carrusel-container{
     width: 300%;
-    min-width: 187.5rem;
+    min-width: 250rem;
     height: 55vh;
     display: grid;
     grid-template-columns: 0.5fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.5fr 0.25fr 0.5fr 0.25fr ;
