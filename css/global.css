@@ -230,10 +230,14 @@ body{
         flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
-        backdrop-filter: blur(3.125rem);
-        -webkit-backdrop-filter: blur(3.125rem);
-        border-radius: 0 0 0.5rem 0.5rem;
+        background-color: var(--c-white);
+        /*backdrop-filter: blur(3.125rem);
+        -webkit-backdrop-filter: blur(3.125rem);*/
         overflow: hidden;
+    }
+
+    .Pink {
+        background-color: var(--c-primary);
     }
 
     .Header-menu.isActive{
