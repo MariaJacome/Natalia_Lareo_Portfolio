@@ -1,4 +1,4 @@
-.Main-carrusel {
+.Main-works {
     padding: 0;
 }
 
@@ -8,7 +8,7 @@
     overflow: hidden;
 }
 
-.Carrusel-container{
+.Carrusel-container--woty{
     width: 300%;
     min-width: 250rem;
     height: 55vh;
@@ -54,4 +54,18 @@
 
 .Carrusel-btn.isActive{
     background-color: var(--c-secondary);
+}
+
+.Work-text{
+    padding: 1.5rem 4rem;
+}
+
+.Carrusel-h2{
+    font-size: var(--fs-texts);
+    margin: 0 0 0.5rem;
+}
+
+.Carrusel-span{
+    font-size: var(--fs-texts);
+    text-transform: uppercase;
 }
