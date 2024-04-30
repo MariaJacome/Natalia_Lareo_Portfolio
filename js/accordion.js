@@ -19,9 +19,11 @@ console.log(accordionContact)
 accordionBtns.forEach( ( eachBtn , index) => {
     accordionBtns[index].addEventListener(`click` , ( ) => {
         accordionContent.forEach( ( eachContent , index) => {
-            accordionContent[index].classList.toggle('isActive')
-            accordionBtns[index].classList.toggle('isActive')
+            accordionContent[index].classList.remove('isActive')
+            accordionBtns[index].classList.remove('isActive')
         })
+        accordionContent[index].classList.add('isActive')
+        accordionBtns[index].classList.add('isActive')
     })
 })
 

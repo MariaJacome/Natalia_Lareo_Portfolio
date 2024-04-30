@@ -10,9 +10,9 @@ const moveContainer = () => {
     carruselContainer.style.transform = `translateX(-${posicion * (100 / 9)}%)`
 }
 
-const limitarPosicion = () => {
+/*const limitarPosicion = () => {
     posicion = Math.max(0, Math.min(posicion, numElementos - 1));
-};
+};*/
 
 const carruselContainerHandler = e => {
     if(e.deltaY > 0){

@@ -19,6 +19,11 @@
     transform: translateX(0%);
 }
 
+.Project{
+    height: 75vh; 
+    width: 400%;
+}
+
 .Img-container{
     width: 100%;
     overflow: hidden;
@@ -60,12 +65,18 @@
     padding: 1.5rem 4rem;
 }
 
-.Carrusel-h2{
+.Work-h2{
     font-size: var(--fs-texts);
     margin: 0 0 0.5rem;
 }
 
-.Carrusel-span{
+.Work-span{
     font-size: var(--fs-texts);
     text-transform: uppercase;
+}
+
+@media (max-width: 500px){
+    .Work-text{
+        padding: 1.5rem 2rem;
+    }
 }

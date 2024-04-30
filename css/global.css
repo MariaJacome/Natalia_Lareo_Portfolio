@@ -127,6 +127,11 @@ body{
 
 .Header-name{
     padding: 2rem 0 2rem 4rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.25rem;
 }
 
 
@@ -263,7 +268,7 @@ body{
     }
 }
 
-@media (max-width: 425px){
+@media (max-width: 500px){
     .Main-content{
         padding: 1rem 3rem;
     }
@@ -274,9 +279,7 @@ body{
     .Header-hamburger {
         padding: 2rem 2rem 2rem 0;
     }
-}
 
-@media (max-width: 500px){
     .Header-name{
         width: 60%;
     }
