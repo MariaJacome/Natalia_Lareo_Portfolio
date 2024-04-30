@@ -1,8 +1,8 @@
-.Main-works {
+.Main-works{
     padding: 0;
 }
 
-.Carrusel {
+.Carrusel{
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -35,7 +35,7 @@
     object-position: center;
 }
 
-.Carrusel-ul {
+.Carrusel-ul{
     width: 100%;
     margin: 1rem;
     padding: 1rem 0 0;
@@ -65,14 +65,28 @@
     padding: 1.5rem 4rem;
 }
 
+.Work-text,
+.Work-a{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
 .Work-h2{
     font-size: var(--fs-texts);
-    margin: 0 0 0.5rem;
 }
 
 .Work-span{
     font-size: var(--fs-texts);
     text-transform: uppercase;
+}
+
+.Work-p{
+    max-width: 46.875rem;
+    font-weight: 300;
+    margin: 0.5rem 0 0;
 }
 
 @media (max-width: 500px){

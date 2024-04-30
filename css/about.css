@@ -185,67 +185,19 @@
     color: var(--c-black);
 }
 
-.Marquee{
-    width: 100%;
-    margin: 3.125rem auto;
-    overflow: hidden;
-}
-
-.Marquee-slide{
-    width: 200%;
-    display: grid;
-    grid-template-columns: repeat(8 , 1fr);
-    animation: slide 30s linear infinite;
-    -webkit-animation: slide 30s linear infinite;
-}
-
-.Marquee-text{
-    width: 100%;
-    min-width: max-content;
-    padding: 0 2rem;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    border-right: 2px solid var(--c-black);
-}
-
-.Marquee-a {
-    width: 100%;
-    font-size: var(--fs-texts);
-    text-align: center;
-    transition: color 0.25s ease-in-out;
-}
-
 .Accordion-a {
     text-decoration: underline;
     transition: color 0.25s ease-in-out;
 }
 
-.Marquee-a:hover,
 .Accordion-a:hover {
     color: var(--c-primary);
 }
 
-.Marquee-a:active,
 .Accordion-a:active {
     color: var(--c-secondary);
 }
 
-@keyframes slide {
-    from{
-        transform: translateX(0%);
-    }
-    to{
-        transform: translateX(-50%);
-    }
-}
-
-@media (min-width: 2000px){
-    .Marquee-slide{
-        max-width: 200%;
-    }
-}
 
 @media (max-width: 950px){
     .Main-content {
@@ -262,23 +214,11 @@
         width: 100%;
         max-width: 34.375rem;
     }
-
-    .Marquee-slide{
-        animation: slide 20s linear infinite;
-        -webkit-animation: slide 20s linear infinite;
-    }
 }
 
 @media (max-width: 600px){
     .Accordion-content.isActive {
         height: 6.5rem;
-    }
-}
-
-@media (max-width: 500px){
-    .Marquee-slide{
-        animation: slide 10s linear infinite;
-        -webkit-animation: slide 10s linear infinite;
     }
 }
 
