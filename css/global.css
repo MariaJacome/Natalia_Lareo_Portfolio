@@ -115,6 +115,12 @@ body{
     font-family: "Josefin Sans", sans-serif;
 }
 
+.Header{
+    width: 100%;
+    max-width: 125rem;
+    margin: auto;
+}
+
 .Header-wrapper{
     width: 100%;
     display: flex;
@@ -187,6 +193,8 @@ body{
 
 .Main {
     width: 100%;
+    max-width: 125rem;
+    margin: auto;
     min-height: 65vh;
     padding: 2rem 4rem;
 }
