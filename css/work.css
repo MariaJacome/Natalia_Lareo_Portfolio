@@ -8,7 +8,7 @@
 }
 
 .Carrusel-container--woty{
-    width: 5500px;
+    width: 5000px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -19,7 +19,6 @@
 }
 
 .Container-img{
-    flex-grow: 1;
     height: 28.125rem;
     overflow: hidden;
 }
