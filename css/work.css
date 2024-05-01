@@ -3,12 +3,12 @@
 }
 
 .Carrusel{
-    position: relative;
+    width: 100%;
     overflow: hidden;
 }
 
-.Carrusel-container--woty{
-    width: 5500px;
+.Carrusel-container--xl{
+    width: 375rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -23,6 +23,10 @@
     overflow: hidden;
 }
 
+.Project{
+    height: 34.375rem;
+}
+
 .Img-picture,
 .Img-archive {
     width: 100%;
@@ -31,39 +35,8 @@
     object-position: center;
 }
 
-.Project{
-    height: 75vh; 
-    width: 400%;
-}
-
-.Carrusel-ul{
-    width: 100%;
-    margin: 1rem;
-    padding: 1rem 0 0;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    position: absolute;
-    bottom: 0;
-}
-
-.Carrusel-btn{
-    width: 1rem;
-    height: 1rem;
-    background-color: var(--c-primaryTransp);
-    border: 0.5px solid var(--c-white);
-    border-radius: 50%;
-    transition: background-color 0.15s ease-in-out;
-}
-
-.Carrusel-btn.isActive{
-    background-color: var(--c-secondary);
-}
-
 .Work-text{
-    padding: 1.5rem 4rem;
+    padding: 1.5rem 4rem 4rem;
 }
 
 .Work-text,
@@ -74,6 +47,20 @@
     align-items: flex-start;
     gap: 0.5rem;
 }
+
+.Work-a{
+    width: 100%;
+    transition: color 0.25s ease-in-out;
+}
+
+.Work-a:hover {
+    color: var(--c-primary);
+}
+
+.Work-a:active {
+    color: var(--c-secondary);
+}
+
 
 .Work-h2{
     font-size: var(--fs-texts);
