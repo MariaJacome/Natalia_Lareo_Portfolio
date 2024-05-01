@@ -8,7 +8,7 @@
 }
 
 .Carrusel-container--xl{
-    width: 375rem;
+    width: 3750px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -19,7 +19,7 @@
 }
 
 .Container-img{
-    height: 28.125rem;
+    height: 300px;
     overflow: hidden;
 }
 
@@ -36,7 +36,7 @@
 }
 
 .Work-text{
-    padding: 1.5rem 4rem 4rem;
+    padding: 1.5rem 4rem 2rem;
 }
 
 .Work-text,
@@ -63,11 +63,11 @@
 
 
 .Work-h2{
-    font-size: var(--fs-texts);
+    font-size: var(--fs-input);
 }
 
 .Work-span{
-    font-size: var(--fs-texts);
+    font-size: var(--fs-input);
     text-transform: uppercase;
 }
 

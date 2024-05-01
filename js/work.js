@@ -3,6 +3,9 @@
 const carrusel = document.querySelector('.Carrusel')
 const carruselContainer = document.querySelector('.Carrusel-container--xl')
 
+carrusel.addEventListener(`mouseover` , function (){
+    
+})
 
 let pixels = 0
 let increase = 100
