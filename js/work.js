@@ -4,11 +4,16 @@ const carrusel = document.querySelector('.Carrusel')
 const carruselContainer = document.querySelector('.Carrusel-container--xl')
 
 carrusel.addEventListener(`mouseover` , function (){
-    
+    document.body.style.overflowY = "hidden";
+})
+
+carrusel.addEventListener(`mouseout` , function (){
+    document.body.style.overflowY = "auto";
 })
 
 let pixels = 0
 let increase = 100
+
 
 carrusel.addEventListener(`mousewheel` , function (e){
     const carruselContainerWidth = carruselContainer.getBoundingClientRect().width
@@ -37,30 +42,3 @@ carrusel.addEventListener(`mousewheel` , function (e){
     carruselContainer.style.transform = `translateX(-${pixels}px)`
 })
 
-/*let posicion = 0
-
-const moveContainer = () => {
-    carruselContainer.style.transform = `translateX(-${posicion * (100 / 9)}%)`
-}
-
-const carruselContainerHandler = e => {
-    if(e.deltaY > 0){
-        posicion++
-    }else{
-        posicion--
-    }
-    moveContainer()
-}
-
-carruselContainer.addEventListener(`mousewheel` , carruselContainerHandler)*/
-
-
-/* 
-
-carrusel.forEach((item, index) => {
-    item.addEventListener('mouseover', function() {
-        mouseInCarrusel(index);
-    });
-});
-
-*/

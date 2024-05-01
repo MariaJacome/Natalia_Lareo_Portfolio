@@ -7,8 +7,9 @@
     overflow: hidden;
 }
 
-.Carrusel-container--xl{
-    width: 234.375rem;
+.Carrusel-container--xl,
+.Carrusel-container--l,
+.Carrusel-container--s {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -16,6 +17,18 @@
     gap: 0.5rem;
     transition: all 0.5s ease-in-out;
     transform: translateX(0%);
+}
+
+.Carrusel-container--xl{
+    width: 234.375rem;
+}
+
+.Carrusel-container--l{
+    width: 2300px;
+}
+
+.Carrusel-container--s{
+    width: 1800px;  
 }
 
 .Carrusel-container--xl.File {
@@ -52,9 +65,15 @@
     gap: 0.5rem;
 }
 
-.Work-a{
+.Work-a {
     width: 100%;
     transition: color 0.25s ease-in-out;
+}
+
+.Work-a.Out{
+    text-transform: uppercase;
+    text-decoration: underline;
+    padding: 0.5rem 0 0 0.75rem ;
 }
 
 .Work-a:hover {
