@@ -4,29 +4,45 @@
 
 .Main-section{
     width: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: flex-start;
+    min-height: 100%;
 }
 
 .Section-h1{
+    width: 100%;
     font-size: 1.5rem;
     color: var(--c-secondary);
 }
 
 .Section-name{
-    min-height: 75vh;
+    width: 100%;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     justify-content: flex-end;
     align-items: flex-end;
+    padding: 2rem 0 0;
 }
 
 .Span-home{
     font-size: 20rem;
     line-height: 15rem;
     color: var(--c-secondary);
+}
+
+.Name-wrapper{
+    width: 36.5vw;
+    min-width: 31.25rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+@media (max-width: 1000px){
+    .Section-name{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+    }
 }
 
 
@@ -37,10 +53,23 @@
     }
 }
 
-@media (max-width: 600px){
+@media (max-width: 600px){ 
+    .Main {
+        padding: 2rem;
+    }
+
     .Main-section{
         flex-flow: column nowrap;
         align-items: center;
+    }
+
+    .Section-name{
+        min-height: 50vh;
+    }
+
+    .Name-wrapper{
+        width: 100%;
+        min-width: auto;
     }
 }
 
