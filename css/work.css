@@ -7,9 +7,8 @@
     overflow: hidden;
 }
 
-.Carrusel-container--xl,
-.Carrusel-container--l,
-.Carrusel-container--s {
+.Carrusel-container{
+    width: max-content;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -17,26 +16,11 @@
     gap: 0.5rem;
     transition: all 0.5s ease-in-out;
     transform: translateX(0%);
-}
-
-.Carrusel-container--xl{
-    width: 234.375rem;
-}
-
-.Carrusel-container--l{
-    width: 2300px;
-}
-
-.Carrusel-container--s{
-    width: 1800px;  
-}
-
-.Carrusel-container--xl.File {
-    width: 6500px;
+    background-color: blue;
 }
 
 .Container-img{
-    height: 300px;
+    height: 18.75rem;
     overflow: hidden;
 }
 
@@ -103,5 +87,9 @@
 @media (max-width: 500px){
     .Work-text{
         padding: 1.5rem 2rem;
+    }
+
+    .Container-img{
+        height: 12.5rem;
     }
 }

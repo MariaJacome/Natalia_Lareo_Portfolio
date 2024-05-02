@@ -1,7 +1,7 @@
 'use strict'
 
 const carrusel = document.querySelector('.Carrusel')
-const carruselContainer = document.querySelector('.Carrusel-container--xl')
+const carruselContainer = document.querySelector('.Carrusel-container')
 
 carrusel.addEventListener(`mouseover` , function (){
     document.body.style.overflowY = "hidden";
