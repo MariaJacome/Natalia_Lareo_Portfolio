@@ -339,20 +339,28 @@ body{
 }
 
 @media (max-width: 500px){
-    .Main-content{
-        padding: 1rem 3rem;
-    }
-
     .Header-name{
-        padding: 1rem 0 1rem 2rem;
+        padding: 1.25rem 0 1.25rem 2rem;
     }
     
     .Header-hamburger {
-        padding: 1rem 2rem 1rem 0;
+        padding: 1.25rem 2rem 1.25rem 0;
     }
 
     .Header-name{
         width: 60%;
+    }
+
+    .Header-menu.isActive {
+        height: calc(100vh - 5rem);
+    }
+
+    .Main{
+        margin: 5rem 0 0;
+    }
+
+    .Main-content{
+        padding: 1rem 3rem;
     }
 
     .Marquee-slide{
