@@ -28,7 +28,7 @@
 }
 
 .Img-picture,
-.Img-archive {
+.Img-archive{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -48,7 +48,7 @@
     gap: 0.5rem;
 }
 
-.Work-a {
+.Work-a{
     width: 100%;
     transition: color 0.25s ease-in-out;
 }
@@ -59,11 +59,11 @@
     padding: 0.5rem 0 0 0.75rem ;
 }
 
-.Work-a:hover {
+.Work-a:hover{
     color: var(--c-primary);
 }
 
-.Work-a:active {
+.Work-a:active{
     color: var(--c-secondary);
 }
 
@@ -94,12 +94,11 @@
     }
 
     .Container-img.Project{
-        height: 28.125rem;
+        height: 25rem;
     }
     
-
     .Img-picture,
-    .Img-archive {
+    .Img-archive{
         width: auto;
         height: 100%;
         object-fit: cover;
