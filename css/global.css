@@ -87,6 +87,10 @@ img , picture , video , iframe , svg {
     height: initial;
 }
 
+video::-webkit-media-controls {
+    display: none;
+}
+
 svg {
     fill: currentColor;
 }
