@@ -59,11 +59,13 @@ carruselList.forEach (( eachCarrusel, index ) => {
     let ultimoX
     carrusel.addEventListener('touchstart', function(e){        
         ultimoX = e.touches[0].clientX;
-        console.log("START: " + ultimoX)   
     })
     carrusel.addEventListener('touchmove', function(e){        
         let actualX = e.touches[0].clientX;
-        desplazarCarrusel(incrementoTouch, actualX<ultimoX);
+        let incremento = Math.abs(actualX - ultimoX)
+        desplazarCarrusel(incremento, actualX<ultimoX);
+        ultimoX = actualX;
+        console.log(incremento)
     })
 });
 
