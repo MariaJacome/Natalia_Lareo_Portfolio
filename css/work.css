@@ -23,7 +23,7 @@
     overflow: hidden;
 }
 
-.Project{
+.Container-img.Project{
     height: 34.375rem;
 }
 
@@ -92,6 +92,11 @@
         height: 12.5rem;
         overflow: hidden;
     }
+
+    .Container-img.Project{
+        height: 28.125rem;
+    }
+    
 
     .Img-picture,
     .Img-archive {
