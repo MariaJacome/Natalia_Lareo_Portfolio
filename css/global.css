@@ -1,5 +1,5 @@
 /* josefin-sans-100 - latin */
-@font-face {
+@font-face{
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Josefin Sans';
     font-style: normal;
@@ -7,7 +7,7 @@
     src: url('../fonts/josefin-sans-v32-latin-100.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* josefin-sans-200 - latin */
-@font-face {
+@font-face{
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Josefin Sans';
     font-style: normal;
@@ -15,7 +15,7 @@
     src: url('../fonts/josefin-sans-v32-latin-200.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* josefin-sans-300 - latin */
-@font-face {
+@font-face{
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Josefin Sans';
     font-style: normal;
@@ -23,7 +23,7 @@
     src: url('../fonts/josefin-sans-v32-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* josefin-sans-regular - latin */
-@font-face {
+@font-face{
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Josefin Sans';
     font-style: normal;
@@ -31,7 +31,7 @@
     src: url('../fonts/josefin-sans-v32-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* josefin-sans-500 - latin */
-@font-face {
+@font-face{
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Josefin Sans';
     font-style: normal;
@@ -39,7 +39,7 @@
     src: url('../fonts/josefin-sans-v32-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* josefin-sans-600 - latin */
-@font-face {
+@font-face{
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Josefin Sans';
     font-style: normal;
@@ -47,7 +47,7 @@
     src: url('../fonts/josefin-sans-v32-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* josefin-sans-700 - latin */
-@font-face {
+@font-face{
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Josefin Sans';
     font-style: normal;
@@ -81,17 +81,17 @@ p a{
     display: inline;
 }
 
-img , picture , video , iframe , svg {
+img , picture , video , iframe , svg{
     display: block;
     width: 100%;
     height: initial;
 }
 
-video::-webkit-media-controls {
+video::-webkit-media-controls{
     display: none;
 }
 
-svg {
+svg{
     fill: currentColor;
 }
 
@@ -99,16 +99,20 @@ svg {
     font-size: 100%;
 
     /*Font sizes*/
+    --fs-h1: 1.5rem;
     --fs-texts: 1.25rem;
     --fs-input: 1rem;
     --fs-label: 0.8rem;
 
     /*Colors*/
     --c-primary: #FF75AC;
-    --c-primaryTransp: #ff75ac71;
     --c-secondary: #be0114;
     --c-white: #ffffff;
     --c-black: #1E1E1E;
+
+    /*Padding - Margin*/
+    --p-simple: 2rem;
+    --p-double: 4rem;
 }
 
 html{
@@ -136,7 +140,7 @@ body{
 }
 
 .Header-name{
-    padding: 2rem 0 2rem 4rem;
+    padding: var(--p-simple) 0 var(--p-simple) var(--p-double);
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
@@ -145,11 +149,11 @@ body{
 }
 
 
-.Header-hamburger {
+.Header-hamburger{
     display: none ;
 }
 
-.Hamburguer-icon {
+.Hamburguer-icon{
     width: 2.5rem;
     fill: var(--c-black);
     cursor: pointer;
@@ -164,7 +168,7 @@ body{
 
 .Menu-ul{
     width: 100%;
-    padding: 2rem 4rem 2rem 0;
+    padding: var(--p-simple) var(--p-double) var(--p-simple) 0;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-end;
@@ -173,7 +177,7 @@ body{
 }
 
 .Menu-li,
-.Menu-li--home {
+.Menu-li--home{
     font-size: var(--fs-input);
     color: var(--c-black);
     transition: color 0.25s ease-in-out;    
@@ -195,12 +199,12 @@ body{
     color: var(--c-white);
 }
 
-.Main {
+.Main{
     width: 100%;
     max-width: 125rem;
     margin: auto;
     min-height: 65vh;
-    padding: 2rem 4rem;
+    padding: var(--p-simple) var(--p-double);
     transition: animation 0.5s ease-in-out;
     animation: navigate 1s;
 }
@@ -222,7 +226,7 @@ body{
 .Marquee-text{
     width: 100%;
     min-width: max-content;
-    padding: 0 2rem;
+    padding: 0 var(--p-simple);
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -230,26 +234,26 @@ body{
     border-right: 2px solid var(--c-black);
 }
 
-.Marquee-a {
+.Marquee-a{
     width: 100%;
     font-size: var(--fs-texts);
     text-align: center;
     transition: color 0.25s ease-in-out;
 }
 
-.Marquee-a:hover {
+.Marquee-a:hover{
     color: var(--c-primary);
 }
 
-.Marquee-a:active {
+.Marquee-a:active{
     color: var(--c-secondary);
 }
 
-.Icons {
+.Icons{
     display: none;
 }
 
-@keyframes navigate {
+@keyframes navigate{
     from{
         opacity: 0;
     }
@@ -258,7 +262,7 @@ body{
     }
 }
 
-@keyframes slide {
+@keyframes slide{
     from{
         transform: translateX(0%);
     }
@@ -274,7 +278,7 @@ body{
 }
 
 @media (max-width: 950px){
-    .Main {
+    .Main{
         margin: 6.5rem 0 0;
     }
 
@@ -286,13 +290,13 @@ body{
         background-color: var(--c-white);
     }
     
-    .Header-wrapper.Home {
+    .Header-wrapper.Home{
         background-color: var(--c-primary);
     }
 
-    .Header-hamburger {
+    .Header-hamburger{
         display: flex;
-        padding: 2rem 4rem 2rem 0;
+        padding: var(--p-simple) var(--p-double) var(--p-simple) 0;
     }
 
     .Header-nav{
@@ -317,7 +321,7 @@ body{
         overflow: hidden;
     }
 
-    .Pink {
+    .Pink{
         background-color: var(--c-primary);
     }
 
@@ -331,7 +335,7 @@ body{
     
     .Menu-ul{
         width: 100%;
-        padding: 2rem 4rem 2rem 4rem;
+        padding: var(--p-simple) var(--p-double);
         display: flex;
         flex-flow: column nowrap;
         justify-content: flex-start;
@@ -339,7 +343,7 @@ body{
     }
 
     .Menu-li,
-    .Menu-li--home {
+    .Menu-li--home{
         font-size: calc(var(--fs-texts) * 2 );
     }
 
@@ -351,18 +355,18 @@ body{
 
 @media (max-width: 500px){
     .Header-name{
-        padding: 1.25rem 0 1.25rem 2rem;
+        padding: calc(var(--p-double) / 3.20) 0 calc(var(--p-double) / 3.20) var(--p-simple);
     }
     
     .Header-hamburger {
-        padding: 1.25rem 2rem 1.25rem 0;
+        padding: calc(var(--p-double) / 3.20) var(--p-simple) calc(var(--p-double) / 3.20) 0;
     }
 
     .Header-name{
-        width: 60%;
+        width: 70%;
     }
 
-    .Header-menu.isActive {
+    .Header-menu.isActive{
         height: calc(100vh - 5rem);
     }
 
@@ -371,7 +375,7 @@ body{
     }
 
     .Main-content{
-        padding: 1rem 3rem;
+        padding: calc(var(--p-simple) / 2) calc(var(--p-double) / 1.33);
     }
 
     .Marquee-slide{

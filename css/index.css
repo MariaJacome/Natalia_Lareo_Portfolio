@@ -9,7 +9,7 @@
 
 .Section-h1{
     width: 100%;
-    font-size: 1.5rem;
+    font-size: var(--fs-h1);
     color: var(--c-secondary);
 }
 
@@ -19,13 +19,7 @@
     flex-flow: row nowrap;
     justify-content: flex-end;
     align-items: flex-end;
-    padding: 2rem 0 0;
-}
-
-.Span-home{
-    font-size: 20rem;
-    line-height: 15rem;
-    color: var(--c-secondary);
+    padding: var(--p-simple) 0 0;
 }
 
 .Name-wrapper{
@@ -45,7 +39,6 @@
     }
 }
 
-
 @media (max-width: 830px){
     .Main-section{
         flex-flow: column nowrap;
@@ -55,7 +48,7 @@
 
 @media (max-width: 600px){ 
     .Main {
-        padding: 2rem;
+        padding: var(--p-simple);
     }
 
     .Main-section{

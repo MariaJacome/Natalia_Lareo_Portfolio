@@ -23,7 +23,7 @@
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    margin: 0 0 1rem;
+    margin: 0 0 calc(var(--p-simple) / 2);
 }
 
 .About-h1, 
@@ -39,7 +39,7 @@
 
 .About-h1::after{
     content: '-';
-    margin: 0 0.5rem 0 0.5rem;
+    margin: 0 calc(var(--p-simple) / 4) 0 calc(var(--p-simple) / 4);
 }
 
 .Main-accordion {
@@ -49,14 +49,14 @@
 }
 
 .Accordion-wrapper {
-    margin: 0 0 1rem;
+    margin: 0 0 calc(var(--p-simple) / 2);
 }
 
 .Accordion-btn,
 .Accordion-btn--contact {
     width: 100%;
-    margin: 0 0 1rem;
-    border-radius: 1rem;
+    margin: 0 0 calc(var(--p-simple) / 2);
+    border-radius: calc(var(--p-simple) / 2);
     color: var(--c-black);
     background-color: var(--c-white);
     font-size: var(--fs-texts);
@@ -77,7 +77,7 @@
     display: block;
     width: 0%;
     height: .125rem;
-    margin: 0.5rem 0 0;
+    margin: calc(var(--p-simple) / 4) 0 0;
     background-color: var(--c-primary);
     transition: all 0.4s ease-in-out;
 }
@@ -124,7 +124,7 @@
 }
 
 .Accordion-li {
-    margin: 0 0 1rem;
+    margin: 0 0 calc(var(--p-simple) / 2);
 }
 
 .Content-contact {
@@ -149,9 +149,9 @@
     width: 100%;
     min-width: 8.5rem;
     min-height: 2.375rem;
-    margin: 0 0 1rem;
-    padding: .25rem 0.5rem;
-    border-bottom: 2px solid var(--c-black);
+    margin: 0 0 calc(var(--p-simple) / 2);
+    padding: calc(var(--p-simple) / 8) calc(var(--p-simple) / 4);
+    border-bottom: .125rem solid var(--c-black);
     font-size: var(--fs-input);
     font-family: inherit;
     color: var(--c-black);
@@ -164,7 +164,7 @@
 .Form-input > input[type=submit] {
     width: 50%;
     background-color: var(--c-white);
-    border: 2px solid var(--c-black);
+    border: .125rem solid var(--c-black);
     transition: all 0.25s ease-in-out;
 }
 
@@ -172,7 +172,7 @@
     cursor: pointer;
     color: var(--c-white);
     background-color: var(--c-primary);
-    border: 2px solid var(--c-white);
+    border: .125rem solid var(--c-white);
 }
 
 .Form-input > input[type=submit]:active {

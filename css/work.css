@@ -13,7 +13,7 @@
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
-    gap: 0.5rem;
+    gap: calc(var(--p-simple) / 4);
     transition: all 0.5s ease-in-out;
     transform: translateX(0%);
 }
@@ -36,7 +36,7 @@
 }
 
 .Work-text{
-    padding: 1.5rem 4rem 2rem;
+    padding: calc(var(--p-simple) / 1.33) var(--p-double) var(--p-simple);
 }
 
 .Work-text,
@@ -45,7 +45,7 @@
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: calc(var(--p-simple) / 4);
 }
 
 .Work-a{
@@ -56,7 +56,7 @@
 .Work-a.Out{
     text-transform: uppercase;
     text-decoration: underline;
-    padding: 0.5rem 0 0 0.75rem ;
+    padding: calc(var(--p-simple) / 4) 0 0 calc(var(--p-simple) / 2.66);
 }
 
 .Work-a:hover{
@@ -80,12 +80,12 @@
 .Work-p{
     max-width: 46.875rem;
     font-weight: 300;
-    margin: 0.5rem 0 0;
+    margin: calc(var(--p-simple) / 4) 0 0;
 }
 
 @media (max-width: 500px){
     .Work-text{
-        padding: 1.5rem 2rem;
+        padding: calc(var(--p-simple) / 1.33) var(--p-simple);
     }
 
     .Container-img{
