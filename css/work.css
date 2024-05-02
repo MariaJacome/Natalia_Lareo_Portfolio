@@ -16,7 +16,6 @@
     gap: 0.5rem;
     transition: all 0.5s ease-in-out;
     transform: translateX(0%);
-    background-color: blue;
 }
 
 .Container-img{
@@ -87,5 +86,10 @@
 @media (max-width: 500px){
     .Work-text{
         padding: 1.5rem 2rem;
+    }
+
+    .Container-img{
+        height: 12.5rem;
+        overflow: hidden;
     }
 }
