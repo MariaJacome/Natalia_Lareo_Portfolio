@@ -1,18 +1,15 @@
 'use strict'
-
 const carruselList = document.querySelectorAll('.Carrusel')
 const carruselContainerList = document.querySelectorAll('.Carrusel-container')
 
-carruselList.forEach (( eachCarrusel, index ) => {   
-    
+carruselList.forEach (( eachCarrusel, index ) => {    
     const carrusel = carruselList[index]
     const carruselContainer = carruselContainerList[index]
-    
-    carrusel.addEventListener(`mouseover` , function (){
+    //Añadimos eventos para bloquear el scroll vertical cuando tenemos el ratón sobre un carrusel
+    carrusel.addEventListener(`mouseover` , () => {
         document.body.style.overflowY = "hidden";
     })
-
-    carrusel.addEventListener(`mouseout` , function () {
+    carrusel.addEventListener(`mouseout` , () => {
         document.body.style.overflowY = "auto";
     })
 
@@ -24,7 +21,7 @@ carruselList.forEach (( eachCarrusel, index ) => {
         const windowWidth = window.innerWidth
         const difference = carruselContainerWidth - windowWidth
 
-        //Comprobamos dirección del desplazamiento, positivo hacia la derecha, negativo hacia la izquierda
+        //Comprobamos dirección del desplazamiento (boolean), positivo hacia la derecha, negativo hacia la izquierda
         if(direccion && posicionActualCarrusel < difference){
             //Desplazamiento es igual a posicion actual (pixels) mas el incremento definido
             posicionActualCarrusel = posicionActualCarrusel + incremento
@@ -42,7 +39,6 @@ carruselList.forEach (( eachCarrusel, index ) => {
                 posicionActualCarrusel = 0
             }
         }
-
         //Efectuamos el desplazamiento proviamente calculado
         requestAnimationFrame(()=>{
             if(sintransicion){
@@ -54,34 +50,21 @@ carruselList.forEach (( eachCarrusel, index ) => {
         });
     }
 
-    //Evento para desplazar el carrusel con el scroll
+    //Evento para desplazar el carrusel con la rueda del ratón
     let incrementoScroll = 200
-    carrusel.addEventListener(`mousewheel` , function (e){
+    carrusel.addEventListener(`mousewheel` , (e) => {
         desplazarCarrusel(incrementoScroll, e.deltaY > 0, false);
     })
 
     //Asignamos eventos para desplazar el carrusel con controles táctiles
     let ultimoX
-    carrusel.addEventListener('touchstart', function(e){        
-        ultimoX = e.touches[0].clientX; //inicializamos el punto actual de desplazamiento
+    carrusel.addEventListener('touchstart', (e) => {        
+        ultimoX = e.touches[0].clientX; //Inicializamos el punto actual de desplazamiento
     })
-
-    //carrusel.addEventListener('touchmove', throttle(ejecutarTouchMove, milisegundosThrottle));
-    carrusel.addEventListener('touchmove',  function (e) {
-        let actualX = e.changedTouches[0].clientX;
-            let incremento = Math.abs(actualX - ultimoX)    
-            desplazarCarrusel(incremento, actualX<ultimoX, true);
-            ultimoX = actualX;
+    carrusel.addEventListener('touchmove', (e) => {
+        let actualX = e.changedTouches[0].clientX; //Obtenemos la posición actual
+            let diferenciaPosicion = Math.abs(actualX - ultimoX) //Calculamos la diferencia absoluta(positiva) para saber cuánto nos desplazamos respecto a la posición anterior
+            desplazarCarrusel(diferenciaPosicion, actualX<ultimoX, true);
+            ultimoX = actualX; //Después de realizar el movimiento se actualiza la última posición
     });
-
 });
-
-
-
-
-
-
-
-
-
-
