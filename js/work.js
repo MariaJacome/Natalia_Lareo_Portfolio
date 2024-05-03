@@ -67,7 +67,7 @@ carruselList.forEach (( eachCarrusel, index ) => {
 
     //funciones para desplazar el carrusel con controles tactiles
     let bloquearEvento = false;
-    let milisegundosBloqueo = 100
+    let milisegundosBloqueo = 50
     function ejecutarTouchMove(e, forzarEjecucion) {
         contadorEventosTotales++; //DEBUG
         if(!bloquearEvento || forzarEjecucion)
