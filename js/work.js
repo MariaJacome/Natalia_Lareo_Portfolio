@@ -45,8 +45,11 @@ carruselList.forEach (( eachCarrusel, index ) => {
 
         //Efectuamos el desplazamiento proviamente calculado
         requestAnimationFrame(()=>{
-            //if(sintransicion)carruselContainer.style.transition = 'transform 0.1s linear';
-            if(sintransicion) carruselContainer.style.transition = 'none';
+            if(sintransicion){
+                carruselContainer.style.transition = 'none';
+            }else{
+                carruselContainer.style.transition = 'transform 0.5s ease-in-out';
+            } 
             carruselContainer.style.webkitTransform  = `translateX(-${posicionActualCarrusel}px)`;
         });
     }

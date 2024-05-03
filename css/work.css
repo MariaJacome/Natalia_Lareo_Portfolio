@@ -60,7 +60,7 @@ Hoja de CSS con estilos de la página work.html y páginas de proyectos
     justify-content: flex-start;
     align-items: center;
     gap: calc(var(--p-simple) / 4);
-    transition: all 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
     transform: translateX(0%);
 }
 
