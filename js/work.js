@@ -45,8 +45,8 @@ carruselList.forEach (( eachCarrusel, index ) => {
 
         //Efectuamos el desplazamiento proviamente calculado
         requestAnimationFrame(()=>{
-            carruselContainer.style.transition = 'transform 0.1s linear';
-            //if(sintransicion)carruselContainer.style.transition = 'none';
+            //if(sintransicion)carruselContainer.style.transition = 'transform 0.1s linear';
+            if(sintransicion) carruselContainer.style.transition = 'none';
             carruselContainer.style.webkitTransform  = `translateX(-${posicionActualCarrusel}px)`;
         });
     }
@@ -54,7 +54,7 @@ carruselList.forEach (( eachCarrusel, index ) => {
     //Evento para desplazar el carrusel con el scroll
     let incrementoScroll = 200
     carrusel.addEventListener(`mousewheel` , function (e){
-        desplazarCarrusel(incrementoScroll, e.deltaY > 0);
+        desplazarCarrusel(incrementoScroll, e.deltaY > 0, false);
     })
 
     //Asignamos eventos para desplazar el carrusel con controles táctiles
@@ -62,12 +62,12 @@ carruselList.forEach (( eachCarrusel, index ) => {
     carrusel.addEventListener('touchstart', function(e){        
         ultimoX = e.touches[0].clientX; //inicializamos el punto actual de desplazamiento
     })
-    
+
     //carrusel.addEventListener('touchmove', throttle(ejecutarTouchMove, milisegundosThrottle));
     carrusel.addEventListener('touchmove',  function (e) {
         let actualX = e.changedTouches[0].clientX;
             let incremento = Math.abs(actualX - ultimoX)    
-            desplazarCarrusel(incremento, actualX<ultimoX);
+            desplazarCarrusel(incremento, actualX<ultimoX, true);
             ultimoX = actualX;
     });
 
