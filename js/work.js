@@ -59,25 +59,23 @@ carruselList.forEach (( eachCarrusel, index ) => {
 
 
     //funciones para desplazar el carrusel con controles tactiles
-    function throttle(callback, limit) {
-        var wait = false;
-        return function () {
-            if (!wait) {
-                callback.apply(null, arguments);
-                wait = true;
-                setTimeout(function () {
-                    wait = false;
-                }, limit);
+    let bloquearEvento = false;
+    function throttle(callbackFuncion, msThrottle) {
+        return function() {
+            if (!bloquearEvento) {
+                callbackFuncion.apply(this, arguments);
+                bloquearEvento = true;
+                setTimeout(() => {bloquearEvento = false;}, msThrottle);
             }
         };
     }
+
     function ejecutarTouchMove(e) {
         let actualX = e.changedTouches[0].clientX;
         let incremento = Math.abs(actualX - ultimoX)    
         desplazarCarrusel(incremento, actualX<ultimoX);
         ultimoX = actualX;
     }
-
 
     //asignamos eventos para desplazar el carrusel con controles tactiles
     let ultimoX
