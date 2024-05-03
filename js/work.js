@@ -67,49 +67,47 @@ carruselList.forEach (( eachCarrusel, index ) => {
     })
 
 
-    //funciones para desplazar el carrusel con controles tactiles
+
     let contadorEventosEjecutados = 0; //DEBUG
     let contadorEventosTotales = 0; //DEBUG
-    let bloquearEvento = false;
-    function throttle(callbackFuncion, msThrottle) {
-        return function() {          
-            contadorEventosTotales++; //DEBUG
-            if (!bloquearEvento) {              
-                contadorEventosEjecutados++; //DEBUG
-                callbackFuncion.apply(this, arguments);
-                bloquearEvento = true;
-                setTimeout(() => {bloquearEvento = false;}, msThrottle);
-            }
-        };
-    }
 
-    function ejecutarTouchMove(e) {
-        console.log("INICIO touchmove " + contadorEventosEjecutados);
-        let actualX = e.changedTouches[0].clientX;
-        let incremento = Math.abs(actualX - ultimoX)    
-        desplazarCarrusel(incremento, actualX<ultimoX);
-        ultimoX = actualX;
-        
-        console.log("FIN touchmove " + contadorEventosEjecutados);
+    //funciones para desplazar el carrusel con controles tactiles
+    let bloquearEvento = false;
+    let milisegundosBloqueo = 100
+    function ejecutarTouchMove(e, forzarEjecucion) {
+        contadorEventosTotales++; //DEBUG
+        if(!bloquearEvento || forzarEjecucion)
+        {
+            bloquearEvento = true;
+            contadorEventosEjecutados++; //DEBUG
+            console.log("INICIO touchmove " + contadorEventosEjecutados);
+            let actualX = e.changedTouches[0].clientX;
+            let incremento = Math.abs(actualX - ultimoX)    
+            desplazarCarrusel(incremento, actualX<ultimoX);
+            ultimoX = actualX;
+            
+            setTimeout(() => {
+                bloquearEvento = false;
+                console.log("FIN touchmove " + contadorEventosEjecutados);
+            }, milisegundosBloqueo);
+        }
     }
 
     //asignamos eventos para desplazar el carrusel con controles tactiles
-    let ultimoX
-    let milisegundosThrottle = 0
+    let ultimoX  
     carrusel.addEventListener('touchstart', function(e){        
         ultimoX = e.touches[0].clientX;
+        contadorEventosEjecutados = 0; //DEBUG
+        contadorEventosTotales = 0; //DEBUG
     })
     //carrusel.addEventListener('touchmove', throttle(ejecutarTouchMove, milisegundosThrottle));
-    carrusel.addEventListener('touchend',  function (e) {
-        ejecutarTouchMove(e);
+    carrusel.addEventListener('touchmove',  function (e) {
+        ejecutarTouchMove(e, false);
     });
 
     carrusel.addEventListener('touchend',  function (e) {
         //ejecutarTouchMove(e);
-        console.log("Eventos ejecutados: " + contadorEventosEjecutados); //DEBUG
-        console.log("Eventos totales: " + contadorEventosTotales); //DEBUG
-        contadorEventosEjecutados = 0; //DEBUG
-        contadorEventosTotales = 0; //DEBUG
+        console.log("Eventos ejecutados: " + contadorEventosEjecutados + " de " + contadorEventosTotales); //DEBUG
     });
 
 
