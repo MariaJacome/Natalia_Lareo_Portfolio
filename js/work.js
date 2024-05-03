@@ -19,6 +19,7 @@ carruselList.forEach (( eachCarrusel, index ) => {
         document.body.style.overflowY = "auto";
     })
 
+    //funcion para desplazar el carrusel
     let posicionActualCarrusel = 0
     let desplazarCarrusel = function(incremento, direccion)
     {
@@ -50,24 +51,47 @@ carruselList.forEach (( eachCarrusel, index ) => {
         });
     }
 
-    
+    //evento para desplazar el carrusel con el scroll
     let incrementoScroll = 200
     carrusel.addEventListener(`mousewheel` , function (e){
         desplazarCarrusel(incrementoScroll, e.deltaY > 0);
     })
 
+
+    //funciones para desplazar el carrusel con controles tactiles
+    function throttle(callback, limit) {
+        var wait = false;
+        return function () {
+            if (!wait) {
+                callback.apply(null, arguments);
+                wait = true;
+                setTimeout(function () {
+                    wait = false;
+                }, limit);
+            }
+        };
+    }
+    function ejecutarTouchMove(e) {
+        let actualX = e.changedTouches[0].clientX;
+        let incremento = Math.abs(actualX - ultimoX)    
+        desplazarCarrusel(incremento, actualX<ultimoX);
+        ultimoX = actualX;
+    }
+
+
+    //asignamos eventos para desplazar el carrusel con controles tactiles
     let ultimoX
+    let milisegundosThrottle = 100
     carrusel.addEventListener('touchstart', function(e){        
         ultimoX = e.touches[0].clientX;
     })
-    carrusel.addEventListener('touchmove', function(e){        
-        let actualX = e.touches[0].clientX;
-        let incremento = Math.abs(actualX - ultimoX)
-        desplazarCarrusel(incremento*2, actualX<ultimoX);
-        ultimoX = actualX;
-    })
+    carrusel.addEventListener('touchmove', throttle(ejecutarTouchMove, milisegundosThrottle));
+    carrusel.addEventListener('touchend',  function (e) {
+        ejecutarTouchMove(e);
+    });
 
- 
+
+    
 });
 
 
