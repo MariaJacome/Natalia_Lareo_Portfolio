@@ -18,7 +18,7 @@ carruselList.forEach (( eachCarrusel, index ) => {
 
     //Función para desplazar el carrusel
     let posicionActualCarrusel = 0
-    let desplazarCarrusel = function(incremento, direccion)
+    let desplazarCarrusel = function(incremento, direccion, sintransicion)
     {
         const carruselContainerWidth = carruselContainer.getBoundingClientRect().width
         const windowWidth = window.innerWidth
@@ -45,8 +45,8 @@ carruselList.forEach (( eachCarrusel, index ) => {
 
         //Efectuamos el desplazamiento proviamente calculado
         requestAnimationFrame(()=>{
-            //carruselContainer.style.transition = 'transform 0.1s linear';
-            carruselContainer.style.transition = 'none';
+            carruselContainer.style.transition = 'transform 0.1s linear';
+            //if(sintransicion)carruselContainer.style.transition = 'none';
             carruselContainer.style.webkitTransform  = `translateX(-${posicionActualCarrusel}px)`;
         });
     }
@@ -57,55 +57,18 @@ carruselList.forEach (( eachCarrusel, index ) => {
         desplazarCarrusel(incrementoScroll, e.deltaY > 0);
     })
 
-
-    //funciones para desplazar el carrusel con controles tactiles
-    let bloquearEvento = false;
-    let milisegundosBloqueo = 0
-    function ejecutarTouchMove(e) {    
-        //solo ejecutamos el evento si no esta bloquedo
-        if(!bloquearEvento)
-        {
-            //bloqueamos el evento cuando vamos a realizarlo
-            bloquearEvento = true;
-
-            let actualX = e.changedTouches[0].clientX;
+    //Asignamos eventos para desplazar el carrusel con controles táctiles
+    let ultimoX
+    carrusel.addEventListener('touchstart', function(e){        
+        ultimoX = e.touches[0].clientX; //inicializamos el punto actual de desplazamiento
+    })
+    
+    //carrusel.addEventListener('touchmove', throttle(ejecutarTouchMove, milisegundosThrottle));
+    carrusel.addEventListener('touchmove',  function (e) {
+        let actualX = e.changedTouches[0].clientX;
             let incremento = Math.abs(actualX - ultimoX)    
             desplazarCarrusel(incremento, actualX<ultimoX);
             ultimoX = actualX;
-            
-            //lanzamos un setTimeout para no desbloquear la ejecucion del evento hasta dentro de los milisegundos establecidos
-            setTimeout(() => {
-                bloquearEvento = false;
-            }, milisegundosBloqueo);
-        }
-    }
-
-    //Asignamos eventos para desplazar el carrusel con controles táctiles
-    let ultimoX  
-    let primerX
-    let timestampInicio
-    carrusel.addEventListener('touchstart', function(e){        
-        ultimoX = e.touches[0].clientX; //inicializamos el punto actual de desplazamiento
-        primerX = ultimoX;
-        timestampInicio = performance.now(); //guardamos el inicio del evento
-    })
-    //carrusel.addEventListener('touchmove', throttle(ejecutarTouchMove, milisegundosThrottle));
-    carrusel.addEventListener('touchmove',  function (e) {
-        ejecutarTouchMove(e);
-    });
-
-    carrusel.addEventListener('touchend',  function (e) {
-        let actualX = e.changedTouches[0].clientX;       
-        let distanciaRecorridaTotal = Math.abs(actualX - primerX);
-        let timestampFin = performance.now()
-        let duracion = timestampFin - timestampInicio
-        let velocidad = distanciaRecorridaTotal/duracion //velocidad en pixeles/ms
-        if(velocidad<1) velocidad = 1; //no permitimos que el movimiento sea mas lento que lo normal
-
-        let incremento = Math.abs(actualX - ultimoX)  
-        desplazarCarrusel(incremento * velocidad * 2, actualX<ultimoX);
-        
-        if(velocidad>1) console.log("Inercia " +incremento + " -> " + incremento * velocidad)  
     });
 
 });
