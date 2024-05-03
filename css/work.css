@@ -20,9 +20,10 @@
     font-size: var(--fs-label);
 }
 
-.Breadcrumbs-li.Standard::after{
-    content: '-';
+.Breadcrumbs-li::before{
+    content: '<';
     padding: 0 calc(var(--p-simple) / 4);
+    color: var(--c-grey);
 }
 
 .Breadcrumbs-li.Active{
@@ -117,6 +118,10 @@
 
 @media (max-width: 500px){
     .Work-text{
+        padding: calc(var(--p-simple) / 1.33) var(--p-simple);
+    }
+
+    .Breadcrumbs{
         padding: calc(var(--p-simple) / 1.33) var(--p-simple);
     }
 

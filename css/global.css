@@ -109,6 +109,7 @@ svg{
     --c-secondary: #be0114;
     --c-white: #ffffff;
     --c-black: #1E1E1E;
+    --c-grey: #727272;
 
     /*Padding - Margin*/
     --p-simple: 2rem;
