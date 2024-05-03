@@ -77,7 +77,7 @@ carruselList.forEach (( eachCarrusel, index ) => {
     function ejecutarTouchMove(e) {
         let actualX = e.changedTouches[0].clientX;
         let incremento = Math.abs(actualX - ultimoX)    
-        desplazarCarrusel(incremento, actualX<ultimoX);
+        desplazarCarrusel(incremento*4, actualX<ultimoX);
         ultimoX = actualX;
     }
 
