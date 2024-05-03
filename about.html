@@ -1,3 +1,15 @@
+<!--
+Descripción -
+ Archivo HTML que contiene información sobre Natalia Lareo.
+  · Encabezado web
+  · Contenido sobre Lareo
+  · Acordeón con contenido
+    - Awards
+    - Redes sociales
+  · Acordeón con formulario de contacto
+  · Marquesina de textos → Enlaces de proyectos
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +44,12 @@
 
 </head>
 <body>
+<!--
+Sección cabezera.
+    Nombre - Título → Enlace HOME
+    Icono Hamburguesa → Oculto hasta que pase a mobile
+    Nav con enlaces web
+-->
     <header class="Header">
         <div class="Header-wrapper">
             <div class="Header-name">
@@ -62,6 +80,9 @@
 
     <main class="Main Main-content">
         <section class="Main-about">
+            <!--
+                Bloque con el texto sobre Lareo
+            -->
             <div class="About-wrapper">
                 <h1 class="About-h1">About Nat</h1>
                 <h2 class="About-h2">Creative art director based in Madrid</h2>
@@ -71,7 +92,9 @@
                     Specialized in Art Direction for Fashion and Styling through the University of Arts London. With more than 6 years of experience in advertising and currently Head of Art at Havas Creative. Throughout my career I have worked for national and international brands such as Vogue, Glamour, GQ, Disney +, Solán de Cabras & Beefeater among many others.
                 </p>
             </div>
-
+            <!--
+                Bloque en acordeón con los premios y las redes sociales
+            -->
             <div class="Main-accordion">
                 <div class="Accordion-wrapper">
                     <div class="Accordion-wrapper-btn">
@@ -108,41 +131,51 @@
             </div>
         </section>
 
+        <!--
+            Bloque en acordeón con el formulario de contacto
+        -->
         <div class="Main-contact">
             <div class="Accordion-wrapper">
-                    <div class="Accordion-wrapper-btn">
-                        <button class="Accordion-btn--contact">Contact</button>
-                    </div>
-                
-                    <div class="Accordion-contact">
-                        <div class="Content-contact">
-                            <form action="URL" method="POST" class="Contact-form">
-                                <div class="Form-content">
-                                    <div class="Form-input">
-                                        <label for="name">Name</label>
-                                        <input type="text" name="nombre" placeholder="Your name" id="name">
-                                    </div>
-                                    <div class="Form-input">
-                                        <label for="email">Email</label>
-                                        <input type="email" name="correo" placeholder="E-mail" id="email">
-                                    </div>
-                                    <div class="Form-input">
-                                        <label for="textarea">Message</label>
-                                        <textarea name="mensaje" placeholder="Writte here your message" id="textarea"></textarea>
-                                    </div>
-                                    <div class="Form-input">
-                                        <input type="submit" value="Send message">
-                                    </div>
+                <div class="Accordion-wrapper-btn">
+                    <button class="Accordion-btn--contact">Contact</button>
+                </div>
+
+                <div class="Accordion-contact">
+                    <div class="Content-contact">
+                        <form action="URL" method="POST" class="Contact-form">
+                            <div class="Form-content">
+                                <div class="Form-input">
+                                    <label for="name">Name</label>
+                                    <input type="text" name="nombre" placeholder="Your name" id="name">
                                 </div>
-                            </form>
-                        </div>
+                                <div class="Form-input">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="correo" placeholder="E-mail" id="email">
+                                </div>
+                                <div class="Form-input">
+                                    <label for="textarea">Message</label>
+                                    <textarea name="mensaje" placeholder="Writte here your message" id="textarea"></textarea>
+                                </div>
+                                <div class="Form-input">
+                                    <input type="submit" value="Send message">
+                                </div>
+                            </div>
+                        </form>
                     </div>
+                </div>
             </div>
-            
         </div>
     </main>
 
-    <div class="Marquee">
+    <!--
+        Bloque COMÚN de marquesina con enlaces de proyectos
+         - WOTY 
+         - VFF 
+         - SKETCHERS 
+         - MULTIÓPTICAS
+    -->
+
+    <aside class="Marquee">
         <div class="Marquee-slide">
             <div class="Marquee-text">
                 <a href="./projects/woty.html" title="Ir a Women of The Year" class="Marquee-a">Women of The Year</a>
@@ -170,7 +203,12 @@
                 <a href="./projects/multiopticas.html" title="Ir a Multiópticas" class="Marquee-a">Multiópticas</a>
             </div>
         </div>
-    </div>
+    </aside>
+
+    <!--
+        Bloque de iconos svg
+         - Icono Hamburguesa
+    -->
 
     <div class="Icons">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">

@@ -1,3 +1,16 @@
+/************************************************************
+Hoja de CSS con estilos comunes en la web
+    · Tipografías
+    · Reset CSS
+    · Variables
+    · Estilos
+    · Media queries
+*************************************************************/
+
+/*
+Bloque de tipografías descargadas para optimizar la web
+*/
+
 /* josefin-sans-100 - latin */
 @font-face{
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -55,6 +68,10 @@
     src: url('../fonts/josefin-sans-v32-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+/*
+RESET
+*/
+
 *{
     margin: 0;
     padding: 0;
@@ -97,7 +114,9 @@ svg{
 
 :root{
     font-size: 100%;
-
+/*
+Bloque de variables
+*/
     /*Font sizes*/
     --fs-h1: 1.5rem;
     --fs-texts: 1.25rem;
@@ -111,7 +130,7 @@ svg{
     --c-black: #1E1E1E;
     --c-grey: #727272;
 
-    /*Padding - Margin*/
+    /*Variables de espaciados*/
     --p-simple: 2rem;
     --p-double: 4rem;
 }
@@ -123,6 +142,10 @@ html{
 body{
     font-family: "Josefin Sans", sans-serif;
 }
+
+/************************************************************
+    Estilos relativos al header de la web
+*************************************************************/
 
 .Header{
     width: 100%;
@@ -148,7 +171,6 @@ body{
     align-items: center;
     gap: 0.25rem;
 }
-
 
 .Header-hamburger{
     display: none ;
@@ -200,6 +222,10 @@ body{
     color: var(--c-white);
 }
 
+/************************************************************
+    Estilos relativos a la contenedora principal de las páginas
+*************************************************************/
+
 .Main{
     width: 100%;
     max-width: 125rem;
@@ -209,6 +235,10 @@ body{
     transition: animation 0.5s ease-in-out;
     animation: navigate 1s;
 }
+
+/************************************************************
+    Estilos relativos a la marquesina con los textos de proyectos
+*************************************************************/
 
 .Marquee{
     width: 100%;
@@ -250,9 +280,17 @@ body{
     color: var(--c-secondary);
 }
 
+/************************************************************
+    Estilo para ocultar el div con los iconos svg para insertarlos con la etiqueta symbol
+*************************************************************/
+
 .Icons{
     display: none;
 }
+
+/*
+    Animación para la transición entre páginas
+*/
 
 @keyframes navigate{
     from{
@@ -263,6 +301,10 @@ body{
     }
 }
 
+/*
+    Animación de la marquesina
+*/
+
 @keyframes slide{
     from{
         transform: translateX(0%);
@@ -272,6 +314,10 @@ body{
     }
 }
 
+
+/************************************************************
+   Media Queries globales
+*************************************************************/
 @media (min-width: 2000px){
     .Marquee-slide{
         max-width: 200%;

@@ -1,3 +1,9 @@
+/************************************************************
+Hoja de CSS con estilos de la página index.html
+    · Estilos del bloque principal
+    · Media queries
+*************************************************************/
+
 .Background{
     background-color: var(--c-primary);
 }
@@ -65,5 +71,3 @@
         min-width: auto;
     }
 }
-
-

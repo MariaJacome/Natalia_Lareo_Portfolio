@@ -1,7 +1,21 @@
+/************************************************************
+Hoja de CSS con estilos de la página work.html y páginas de proyectos
+    · Estilos de bloques principales
+    · Estilos de camino de migas
+    · Estilos de los section de proyectos
+        - Carrusel de imágenes
+        - Textos de proyectos
+    · Media queries
+*************************************************************/
+
 .Main-works{
     padding: 0;
     max-width: max-content;
 }
+
+/************************************************************
+    Bloque de estilos del camino de migas
+*************************************************************/
 
 .Breadcrumbs{
     width: 100%;
@@ -29,6 +43,10 @@
 .Breadcrumbs-li.Active{
     color: var(--c-primary);
 }
+
+/************************************************************
+    Bloque de estilos de los carruseles de imágenes
+*************************************************************/
 
 .Carrusel{
     width: 100%;
@@ -63,6 +81,10 @@
     object-position: center;
 }
 
+/************************************************************
+    Bloque de estilos de los textos de los proyectos
+*************************************************************/
+
 .Work-text{
     padding: calc(var(--p-simple) / 1.33) var(--p-double) var(--p-simple);
 }
@@ -95,7 +117,6 @@
     color: var(--c-secondary);
 }
 
-
 .Work-h2{
     font-size: var(--fs-input);
 }
@@ -115,6 +136,10 @@
     font-size: var(--fs-input);
     margin: calc( var(--p-simple) / 4) 0 0;
 }
+
+/************************************************************
+    Media Queries
+*************************************************************/
 
 @media (max-width: 500px){
     .Work-text{

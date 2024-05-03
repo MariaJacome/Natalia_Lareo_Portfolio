@@ -1,3 +1,14 @@
+<!--
+Descripción -
+ Archivo HTML con proyecto.
+  · Encabezado web
+  · Slider de fotos
+  · Nombre del proyecto
+  · Cargo en el proyecto
+  · Descripción del proyecto
+  · Marquesina de proyectos
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +46,12 @@
 
 </head>
 <body>
+<!--
+Sección cabezera.
+    Nombre - Título → Enlace HOME
+    Icono Hamburguesa → Oculto hasta que pase a mobile
+    Nav con enlaces web
+-->
     <header class="Header">
         <div class="Header-wrapper">
             <div class="Header-name">
@@ -144,7 +161,15 @@
              
     </main>
 
-    <div class="Marquee">
+    <!--
+        Bloque COMÚN de marquesina con enlaces de proyectos
+         - WOTY 
+         - VFF 
+         - SKETCHERS 
+         - MULTIÓPTICAS
+    -->
+
+    <aside class="Marquee">
         <div class="Marquee-slide">
             <div class="Marquee-text">
                 <a href="./../projects/woty.html" title="Ir a Women of The Year" class="Marquee-a">Women of The Year</a>
@@ -172,7 +197,12 @@
                 <a href="./../projects/multiopticas.html" title="Ir a Multiópticas" class="Marquee-a">Multiópticas</a>
             </div>
         </div>
-    </div>
+    </aside>
+
+    <!--
+        Bloque de iconos svg
+         - Icono Hamburguesa
+    -->
 
     <div class="Icons">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
