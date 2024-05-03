@@ -42,13 +42,12 @@ carruselList.forEach (( eachCarrusel, index ) => {
                 posicionActualCarrusel = 0
             }
         }
-        //Efectuamos el desplazamiento proviamente calculado
-        //requestAnimationFrame(()=>{
-            
-        //});
 
-        carruselContainer.style.transition = 'transform 0.1s ease';
-        carruselContainer.style.transform = `translateX(-${posicionActualCarrusel}px)`;
+        //Efectuamos el desplazamiento proviamente calculado
+        requestAnimationFrame(()=>{
+            carruselContainer.style.transition = 'transform 0.1s ease';
+            carruselContainer.style.transform = `translateX(-${posicionActualCarrusel}px)`;
+        });
     }
 
     //Evento para desplazar el carrusel con el scroll
@@ -58,47 +57,61 @@ carruselList.forEach (( eachCarrusel, index ) => {
     })
 
 
-
-    let contadorEventosEjecutados = 0; //DEBUG
-    let contadorEventosTotales = 0; //DEBUG
-
     //funciones para desplazar el carrusel con controles tactiles
     let bloquearEvento = false;
     let milisegundosBloqueo = 50
-    function ejecutarTouchMove(e, forzarEjecucion) {
-        contadorEventosTotales++; //DEBUG
-        if(!bloquearEvento || forzarEjecucion)
+    function ejecutarTouchMove(e) {    
+        //solo ejecutamos el evento si no esta bloquedo
+        if(!bloquearEvento)
         {
+            //bloqueamos el evento cuando vamos a realizarlo
             bloquearEvento = true;
-            contadorEventosEjecutados++; //DEBUG
-            console.log("INICIO touchmove " + contadorEventosEjecutados);
+
             let actualX = e.changedTouches[0].clientX;
             let incremento = Math.abs(actualX - ultimoX)    
             desplazarCarrusel(incremento, actualX<ultimoX);
             ultimoX = actualX;
             
+            //lanzamos un setTimeout para no desbloquear la ejecucion del evento hasta dentro de los milisegundos establecidos
             setTimeout(() => {
                 bloquearEvento = false;
-                console.log("FIN touchmove " + contadorEventosEjecutados);
             }, milisegundosBloqueo);
         }
     }
 
     //Asignamos eventos para desplazar el carrusel con controles táctiles
     let ultimoX  
+    let primerX
+    let timestampInicio
     carrusel.addEventListener('touchstart', function(e){        
-        ultimoX = e.touches[0].clientX;
-        contadorEventosEjecutados = 0; //DEBUG
-        contadorEventosTotales = 0; //DEBUG
+        ultimoX = e.touches[0].clientX; //inicializamos el punto actual de desplazamiento
+        primerX = ultimoX;
+        timestampInicio = performance.now(); //guardamos el inicio del evento
     })
     //carrusel.addEventListener('touchmove', throttle(ejecutarTouchMove, milisegundosThrottle));
     carrusel.addEventListener('touchmove',  function (e) {
-        ejecutarTouchMove(e, false);
+        ejecutarTouchMove(e);
     });
 
     carrusel.addEventListener('touchend',  function (e) {
-        //ejecutarTouchMove(e);
-        console.log("Eventos ejecutados: " + contadorEventosEjecutados + " de " + contadorEventosTotales); //DEBUG
+        let actualX = e.changedTouches[0].clientX;       
+        let distanciaRecorridaTotal = Math.abs(actualX - primerX);
+        let timestampFin = performance.now()
+        let duracion = timestampFin - timestampInicio
+        let velocidad = distanciaRecorridaTotal/duracion //velocidad en pixeles/ms
+        if(velocidad<1) velocidad = 1; //no permitimos que el movimiento sea mas lento que lo normal
+
+        let incremento = Math.abs(actualX - ultimoX)  
+        desplazarCarrusel(incremento * velocidad, actualX<ultimoX);
+        
+        console.log("timestampInicio: "+ timestampInicio)
+        console.log("timestampFin: "+ timestampFin)
+        console.log("actualX: "+ actualX)
+        console.log("primerX: "+ primerX)
+        console.log("distanciaRecorridaTotal: "+ distanciaRecorridaTotal)
+        console.log("Velocidad: "+ velocidad)
+        console.log("Incremento: "+ incremento)   
+        console.log("Incremento final: "+ incremento * velocidad)  
     });
 
 });
