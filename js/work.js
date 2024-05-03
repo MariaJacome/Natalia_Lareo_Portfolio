@@ -47,7 +47,8 @@ carruselList.forEach (( eachCarrusel, index ) => {
         }
         //Efectuamos el desplazamiento proviamente calculado
         requestAnimationFrame(()=>{
-            carruselContainer.style.transform = `translateX(-${posicionActualCarrusel}px)`
+            carruselContainer.style.transition = 'transform 0.3s ease';
+            carruselContainer.style.transform = `translateX(-${posicionActualCarrusel}px)`;
         });
     }
 
@@ -75,10 +76,13 @@ carruselList.forEach (( eachCarrusel, index ) => {
     }
 
     function ejecutarTouchMove(e) {
+        console.log("INICIO touchmove " + contadorEventosEjecutados);
         let actualX = e.changedTouches[0].clientX;
         let incremento = Math.abs(actualX - ultimoX)    
-        desplazarCarrusel(incremento*4, actualX<ultimoX);
+        desplazarCarrusel(incremento, actualX<ultimoX);
         ultimoX = actualX;
+        
+        console.log("FIN touchmove " + contadorEventosEjecutados);
     }
 
     //asignamos eventos para desplazar el carrusel con controles tactiles
@@ -89,7 +93,7 @@ carruselList.forEach (( eachCarrusel, index ) => {
     })
     carrusel.addEventListener('touchmove', throttle(ejecutarTouchMove, milisegundosThrottle));
     carrusel.addEventListener('touchend',  function (e) {
-        ejecutarTouchMove(e);
+        //ejecutarTouchMove(e);
         console.log("Eventos ejecutados: " + contadorEventosEjecutados); //DEBUG
         console.log("Eventos totales: " + contadorEventosTotales); //DEBUG
         contadorEventosEjecutados = 0; //DEBUG
