@@ -45,8 +45,9 @@ carruselList.forEach (( eachCarrusel, index ) => {
 
         //Efectuamos el desplazamiento proviamente calculado
         requestAnimationFrame(()=>{
-            carruselContainer.style.transition = 'transform 0.1s ease';
-            carruselContainer.style.transform = `translateX(-${posicionActualCarrusel}px)`;
+            //carruselContainer.style.transition = 'transform 0.1s linear';
+            carruselContainer.style.transition = 'none';
+            carruselContainer.style.webkitTransform  = `translateX(-${posicionActualCarrusel}px)`;
         });
     }
 
@@ -59,7 +60,7 @@ carruselList.forEach (( eachCarrusel, index ) => {
 
     //funciones para desplazar el carrusel con controles tactiles
     let bloquearEvento = false;
-    let milisegundosBloqueo = 50
+    let milisegundosBloqueo = 0
     function ejecutarTouchMove(e) {    
         //solo ejecutamos el evento si no esta bloquedo
         if(!bloquearEvento)
