@@ -102,16 +102,9 @@ carruselList.forEach (( eachCarrusel, index ) => {
         if(velocidad<1) velocidad = 1; //no permitimos que el movimiento sea mas lento que lo normal
 
         let incremento = Math.abs(actualX - ultimoX)  
-        desplazarCarrusel(incremento * velocidad, actualX<ultimoX);
+        desplazarCarrusel(incremento * velocidad * 2, actualX<ultimoX);
         
-        console.log("timestampInicio: "+ timestampInicio)
-        console.log("timestampFin: "+ timestampFin)
-        console.log("actualX: "+ actualX)
-        console.log("primerX: "+ primerX)
-        console.log("distanciaRecorridaTotal: "+ distanciaRecorridaTotal)
-        console.log("Velocidad: "+ velocidad)
-        console.log("Incremento: "+ incremento)   
-        console.log("Incremento final: "+ incremento * velocidad)  
+        if(velocidad>1) console.log("Inercia " +incremento + " -> " + incremento * velocidad)  
     });
 
 });
