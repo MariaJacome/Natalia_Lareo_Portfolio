@@ -27,8 +27,6 @@ carruselList.forEach (( eachCarrusel, index ) => {
         const windowWidth = window.innerWidth
         const difference = carruselContainerWidth - windowWidth
 
-        carruselContainer.style.transition = 'none';
-
         //Comprobamos direccion del desplazamiento, positivo hacia la derecha, negativo hacia la izquierda
         if(direccion && posicionActualCarrusel < difference){
             //Desplazamiento es igual a posicion actual (pixels) mas el incremento definido
@@ -52,12 +50,8 @@ carruselList.forEach (( eachCarrusel, index ) => {
             
         //});
 
-
+        carruselContainer.style.transition = 'transform 0.1s ease';
         carruselContainer.style.transform = `translateX(-${posicionActualCarrusel}px)`;
-        // Volver a activar la transición después de un breve retraso
-        setTimeout(() => {
-            carruselContainer.style.transition = 'transform 0.1s ease';
-        }, 0);
     }
 
     //evento para desplazar el carrusel con el scroll
