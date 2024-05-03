@@ -1,7 +1,5 @@
 'use strict'
-
 /* Al hacer CLICK en .Header-hamburgerWrapper se añade la clase .isActive a .Header-menu */
-
 const header = document.querySelector('.Header-wrapper')
 
 const hamburguesa = header.querySelector('.Header-hamburger')

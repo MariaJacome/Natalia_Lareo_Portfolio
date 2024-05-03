@@ -3,9 +3,6 @@
 const carruselList = document.querySelectorAll('.Carrusel')
 const carruselContainerList = document.querySelectorAll('.Carrusel-container')
 
-
-
-
 carruselList.forEach (( eachCarrusel, index ) => {   
     
     const carrusel = carruselList[index]
@@ -19,7 +16,7 @@ carruselList.forEach (( eachCarrusel, index ) => {
         document.body.style.overflowY = "auto";
     })
 
-    //funcion para desplazar el carrusel
+    //Función para desplazar el carrusel
     let posicionActualCarrusel = 0
     let desplazarCarrusel = function(incremento, direccion)
     {
@@ -27,12 +24,12 @@ carruselList.forEach (( eachCarrusel, index ) => {
         const windowWidth = window.innerWidth
         const difference = carruselContainerWidth - windowWidth
 
-        //Comprobamos direccion del desplazamiento, positivo hacia la derecha, negativo hacia la izquierda
+        //Comprobamos dirección del desplazamiento, positivo hacia la derecha, negativo hacia la izquierda
         if(direccion && posicionActualCarrusel < difference){
             //Desplazamiento es igual a posicion actual (pixels) mas el incremento definido
             posicionActualCarrusel = posicionActualCarrusel + incremento
 
-            //Si despues de calcular el desplazamiento, nos hemos pasado del ancho del carrusel (diference), establecemos la posicion a la posicion máxima (diference)
+            //Si despues de calcular el desplazamiento, nos hemos pasado del ancho del carrusel (difference), establecemos la posicion a la posicion máxima (diference)
             if(posicionActualCarrusel > difference){
                 posicionActualCarrusel = difference
             }
@@ -54,7 +51,7 @@ carruselList.forEach (( eachCarrusel, index ) => {
         carruselContainer.style.transform = `translateX(-${posicionActualCarrusel}px)`;
     }
 
-    //evento para desplazar el carrusel con el scroll
+    //Evento para desplazar el carrusel con el scroll
     let incrementoScroll = 200
     carrusel.addEventListener(`mousewheel` , function (e){
         desplazarCarrusel(incrementoScroll, e.deltaY > 0);
@@ -87,7 +84,7 @@ carruselList.forEach (( eachCarrusel, index ) => {
         }
     }
 
-    //asignamos eventos para desplazar el carrusel con controles tactiles
+    //Asignamos eventos para desplazar el carrusel con controles táctiles
     let ultimoX  
     carrusel.addEventListener('touchstart', function(e){        
         ultimoX = e.touches[0].clientX;
@@ -104,8 +101,6 @@ carruselList.forEach (( eachCarrusel, index ) => {
         console.log("Eventos ejecutados: " + contadorEventosEjecutados + " de " + contadorEventosTotales); //DEBUG
     });
 
-
-    
 });
 
 
