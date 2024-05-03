@@ -1,5 +1,32 @@
 .Main-works{
     padding: 0;
+    max-width: max-content;
+}
+
+.Breadcrumbs{
+    width: 100%;
+    padding: calc(var(--p-simple) / 2) var(--p-double);
+}
+
+.Breadcrumbs-ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.Breadcrumbs-li{
+    text-transform: uppercase;
+    font-size: var(--fs-label);
+}
+
+.Breadcrumbs-li.Standard::after{
+    content: '-';
+    padding: 0 calc(var(--p-simple) / 4);
+}
+
+.Breadcrumbs-li.Active{
+    color: var(--c-primary);
 }
 
 .Carrusel{
@@ -81,6 +108,11 @@
     max-width: 46.875rem;
     font-weight: 300;
     margin: calc(var(--p-simple) / 4) 0 0;
+}
+
+.Work-span--more{
+    font-size: var(--fs-input);
+    margin: calc( var(--p-simple) / 4) 0 0;
 }
 
 @media (max-width: 500px){
