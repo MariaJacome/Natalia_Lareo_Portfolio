@@ -59,10 +59,14 @@ carruselList.forEach (( eachCarrusel, index ) => {
 
 
     //funciones para desplazar el carrusel con controles tactiles
+    let contadorEventosEjecutados = 0; //DEBUG
+    let contadorEventosTotales = 0; //DEBUG
     let bloquearEvento = false;
     function throttle(callbackFuncion, msThrottle) {
-        return function() {
-            if (!bloquearEvento) {
+        return function() {          
+            contadorEventosTotales++; //DEBUG
+            if (!bloquearEvento) {              
+                contadorEventosEjecutados++; //DEBUG
                 callbackFuncion.apply(this, arguments);
                 bloquearEvento = true;
                 setTimeout(() => {bloquearEvento = false;}, msThrottle);
@@ -86,6 +90,10 @@ carruselList.forEach (( eachCarrusel, index ) => {
     carrusel.addEventListener('touchmove', throttle(ejecutarTouchMove, milisegundosThrottle));
     carrusel.addEventListener('touchend',  function (e) {
         ejecutarTouchMove(e);
+        console.log("Eventos ejecutados: " + contadorEventosEjecutados); //DEBUG
+        console.log("Eventos totales: " + contadorEventosTotales); //DEBUG
+        contadorEventosEjecutados = 0; //DEBUG
+        contadorEventosTotales = 0; //DEBUG
     });
 
 
