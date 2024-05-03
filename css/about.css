@@ -187,10 +187,10 @@ Hoja de CSS con estilos de la página about.html
     background-color: var(--c-white);
     border: .125rem solid var(--c-black);
     transition: all 0.25s ease-in-out;
+    cursor: pointer;
 }
 
 .Form-input > input[type=submit]:hover {
-    cursor: pointer;
     color: var(--c-white);
     background-color: var(--c-primary);
     border: .125rem solid var(--c-white);
