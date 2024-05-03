@@ -52,7 +52,7 @@ carruselList.forEach (( eachCarrusel, index ) => {
             
         //});
 
-        
+
         carruselContainer.style.transform = `translateX(-${posicionActualCarrusel}px)`;
         // Volver a activar la transición después de un breve retraso
         setTimeout(() => {
@@ -95,11 +95,15 @@ carruselList.forEach (( eachCarrusel, index ) => {
 
     //asignamos eventos para desplazar el carrusel con controles tactiles
     let ultimoX
-    let milisegundosThrottle = 100
+    let milisegundosThrottle = 0
     carrusel.addEventListener('touchstart', function(e){        
         ultimoX = e.touches[0].clientX;
     })
-    carrusel.addEventListener('touchmove', throttle(ejecutarTouchMove, milisegundosThrottle));
+    //carrusel.addEventListener('touchmove', throttle(ejecutarTouchMove, milisegundosThrottle));
+    carrusel.addEventListener('touchend',  function (e) {
+        ejecutarTouchMove(e);
+    });
+
     carrusel.addEventListener('touchend',  function (e) {
         //ejecutarTouchMove(e);
         console.log("Eventos ejecutados: " + contadorEventosEjecutados); //DEBUG
