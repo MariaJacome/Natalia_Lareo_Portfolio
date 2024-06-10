@@ -31,7 +31,7 @@ Hoja de CSS con estilos de la página work.html y páginas de proyectos
 
 .Breadcrumbs-li{
     text-transform: uppercase;
-    font-size: var(--fs-label);
+    font-size: var(--fs-xs);
     transition: color 0.25s ease-in-out;
 }
 
@@ -127,11 +127,11 @@ Hoja de CSS con estilos de la página work.html y páginas de proyectos
 }
 
 .Work-h2{
-    font-size: var(--fs-input);
+    font-size: var(--fs-min);
 }
 
 .Work-span{
-    font-size: var(--fs-input);
+    font-size: var(--fs-min);
     text-transform: uppercase;
 }
 
@@ -142,7 +142,7 @@ Hoja de CSS con estilos de la página work.html y páginas de proyectos
 }
 
 .Work-span--more{
-    font-size: var(--fs-input);
+    font-size: var(--fs-min);
     margin: calc( var(--p-simple) / 4) 0 0;
 }
 

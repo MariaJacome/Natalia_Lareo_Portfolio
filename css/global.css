@@ -120,12 +120,12 @@ Bloque de variables
     /*Font sizes*/
     --fs-h1: 1.5rem;
     --fs-texts: 1.25rem;
-    --fs-input: 1rem;
-    --fs-label: 0.8rem;
+    --fs-min: 1rem;
+    --fs-xs: 0.8rem;
 
     /*Colors*/
     --c-primary: #FF75AC;
-    --c-secondary: #be0114;
+    --c-secondary: #FD0019;
     --c-white: #ffffff;
     --c-black: #1E1E1E;
     --c-grey: #727272;
@@ -201,7 +201,7 @@ body{
 
 .Menu-li,
 .Menu-li--home{
-    font-size: var(--fs-input);
+    font-size: var(--fs-min);
     color: var(--c-black);
     transition: color 0.25s ease-in-out;    
 }
