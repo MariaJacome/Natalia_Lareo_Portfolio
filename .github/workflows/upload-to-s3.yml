@@ -12,6 +12,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+      with:
+        ref: action-test
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
