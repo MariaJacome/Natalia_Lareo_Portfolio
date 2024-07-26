@@ -7,10 +7,9 @@
             Evento de desplazamiento con mousewheel
             Evento de desplazamiento con touchestart/move
 */
-const main = document.querySelector('.Main')
 
-const carruselList = main.querySelectorAll('.Carrusel')
-const carruselContainerList = main.querySelectorAll('.Carrusel-container')
+const carruselList = document.querySelectorAll('.Carrusel')
+const carruselContainerList = document.querySelectorAll('.Carrusel-container')
 
 carruselList.forEach (( eachCarrusel, index ) => {    
     const carrusel = carruselList[index]

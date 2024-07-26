@@ -19,7 +19,7 @@ Hoja de CSS con estilos de la página work.html y páginas de proyectos
 
 .Breadcrumbs{
     width: 100%;
-    padding: calc(var(--p-simple) / 2) var(--p-double);
+    padding: 0 var(--p-double) calc(var(--p-simple) / 1.5);
 }
 
 .Breadcrumbs-ul{
@@ -62,24 +62,39 @@ Hoja de CSS con estilos de la página work.html y páginas de proyectos
     overflow: hidden;
 }
 
+.Carrusel.Others{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: calc(var(--p-simple) / 4);
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0%);
+}
+
 .Carrusel-container{
     width: max-content;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     gap: calc(var(--p-simple) / 4);
     transition: transform 0.5s ease-in-out;
     transform: translateX(0%);
 }
 
 .Container-img{
-    height: 18.75rem;
+    height: 17.25rem;
     overflow: hidden;
 }
 
 .Container-img.Project{
-    height: 34.375rem;
+    height: 25rem;
+}
+
+.Img-picture.Others{
+    width: 24.5vw;
+    height: 18.75rem;
 }
 
 .Img-picture,
@@ -112,10 +127,34 @@ Hoja de CSS con estilos de la página work.html y páginas de proyectos
     transition: color 0.25s ease-in-out;
 }
 
+.Work-text.Project {
+    margin: 0 0 15vh;
+}
+
 .Work-a.Out{
     text-transform: uppercase;
     text-decoration: underline;
     padding: calc(var(--p-simple) / 4) 0 0 calc(var(--p-simple) / 2.66);
+}
+
+.Other-text {
+    padding: calc(var(--p-simple) / 1.33) calc(var(--p-simple) / 1.33) var(--p-simple);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: calc(var(--p-simple) / 4);
+}
+
+.Work-as--solan{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.Work-a.Out.Solan{
+    min-width: fit-content;
 }
 
 .Work-a:hover{
@@ -126,8 +165,10 @@ Hoja de CSS con estilos de la página work.html y páginas de proyectos
     color: var(--c-secondary);
 }
 
-.Work-h2{
+.Work-h2, 
+.Work-h3{
     font-size: var(--fs-min);
+    line-height: 1.25rem;
 }
 
 .Work-span{
@@ -146,9 +187,110 @@ Hoja de CSS con estilos de la página work.html y páginas de proyectos
     margin: calc( var(--p-simple) / 4) 0 0;
 }
 
+
+.Others-wrapper {
+    margin: 0 0 calc(var(--p-simple) / 2);
+}
+
+.Accordion-btn {
+    width: 100%;
+    border-radius: calc(var(--p-simple) / 2);
+    color: var(--c-black);
+    cursor: pointer;
+    background-color: var(--c-white);
+    font-size: var(--fs-texts);
+    font-family: inherit;
+    text-align: left;
+    transition: color 0.25s ease-in-out;
+}
+
+.Accordion-btn::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: .125rem;
+    margin: calc(var(--p-simple) / 4) 0 0;
+    background-color: var(--c-black);
+    transition: all 0.4s ease-in-out;
+}
+
+.Accordion-btn:hover{
+    color: var(--c-primary);
+}
+
+.Accordion-btn:hover::after{
+    background-color: var(--c-primary);
+}
+
+.Accordion-btn:active{
+    color: var(--c-secondary);
+}
+
+.Accordion-btn:active::after{
+    background-color: var(--c-secondary);
+}
+
+.Accordion-content {
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.Accordion-content.isActive {
+    height: 25.0625rem;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.Accordion-contact.isActive {
+    height: 20rem;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.Accordion-li {
+    margin: 0 0 calc(var(--p-simple) / 2);
+}
+
+.Accordion-a {
+    text-decoration: underline;
+    transition: color 0.25s ease-in-out;
+}
+
+.Accordion-a:hover {
+    color: var(--c-primary);
+}
+
+.Accordion-a:active {
+    color: var(--c-secondary);
+}
+
+.Content-contact {
+    width: 100%;
+}
+
 /************************************************************
     Media Queries
 *************************************************************/
+@media (max-width: 1900px){
+    .Img-picture.Others{
+        width: 31.25rem;
+    }
+}
+
+@media (max-width: 950px){
+    .Work-h2, 
+    .Work-h3{
+        margin: 0 0 -0.40rem;
+    }
+}
+
 
 @media (max-width: 500px){
     .Work-text{
@@ -167,12 +309,8 @@ Hoja de CSS con estilos de la página work.html y páginas de proyectos
     .Container-img.Project{
         height: 25rem;
     }
-    
-    .Img-picture,
-    .Img-archive{
-        width: auto;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
+
+    .Img-picture.Others{
+        width: 23.4375rem;
     }
 }

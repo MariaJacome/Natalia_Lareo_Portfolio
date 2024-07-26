@@ -5,12 +5,20 @@ Hoja de CSS con estilos de la página index.html
 *************************************************************/
 
 .Background{
-    background-color: var(--c-primary);
+    background-color: #000000;
+}
+
+.Main.Home {
+    height: 90vh;
 }
 
 .Main-section{
     width: 100%;
     min-height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .Section-h1{
@@ -37,11 +45,9 @@ Hoja de CSS con estilos de la página index.html
     align-items: flex-end;
 }
 
-@media (max-width: 1000px){
-    .Section-name{
-        position: fixed;
-        bottom: 0;
-        right: 0;
+@media (max-width: 950px){
+    .White-block{
+        display: block;
     }
 }
 
@@ -53,8 +59,8 @@ Hoja de CSS con estilos de la página index.html
 }
 
 @media (max-width: 600px){ 
-    .Main {
-        padding: var(--p-simple);
+    .Main.Home {
+        padding: 0;
     }
 
     .Main-section{

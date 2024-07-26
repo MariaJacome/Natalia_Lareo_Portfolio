@@ -104,10 +104,6 @@ img , picture , video , iframe , svg{
     height: initial;
 }
 
-video::-webkit-media-controls{
-    display: none;
-}
-
 svg{
     fill: currentColor;
 }
@@ -120,19 +116,20 @@ Bloque de variables
     /*Font sizes*/
     --fs-h1: 1.5rem;
     --fs-texts: 1.25rem;
+    --fs-about: 1.125rem;
     --fs-min: 1rem;
-    --fs-xs: 0.8rem;
+    --fs-xs: .8rem;
 
     /*Colors*/
     --c-primary: #FF75AC;
-    --c-secondary: #FD0019;
+    --c-secondary: #FF002C;
     --c-white: #ffffff;
     --c-black: #1E1E1E;
     --c-grey: #727272;
 
     /*Variables de espaciados*/
-    --p-simple: 2rem;
-    --p-double: 4rem;
+    --p-simple: 32px;
+    --p-double: 64px;
 }
 
 html{
@@ -149,7 +146,7 @@ body{
 
 .Header{
     width: 100%;
-    max-width: 125rem;
+    max-width: 2000px;
     margin: auto;
 }
 
@@ -163,13 +160,17 @@ body{
     z-index: 1;
 }
 
+.Header-wrapper.Home{
+    color: var(--c-white);
+}
+
 .Header-name{
     padding: var(--p-simple) 0 var(--p-simple) var(--p-double);
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: center;
-    gap: 0.25rem;
+    gap: 4px;
 }
 
 .Header-hamburger{
@@ -177,9 +178,13 @@ body{
 }
 
 .Hamburguer-icon{
-    width: 2.5rem;
+    width: 40px;
     fill: var(--c-black);
     cursor: pointer;
+}
+
+.Hamburguer-icon.Home{
+    fill: var(--c-white);
 }
 
 .Header-menu{
@@ -196,14 +201,21 @@ body{
     flex-flow: row nowrap;
     justify-content: flex-end;
     align-items: center;
-    gap: 2.8125rem;
+    gap: 45px;
 }
 
 .Menu-li,
 .Menu-li--home{
     font-size: var(--fs-min);
-    color: var(--c-black);
     transition: color 0.25s ease-in-out;    
+}
+
+.Menu-li{
+    color: var(--c-black);  
+}
+
+.Menu-li--home{
+    color: var(--c-white);  
 }
 
 .Menu-li:hover{
@@ -211,7 +223,7 @@ body{
 }
 
 .Menu-li--home:hover{
-    color: var(--c-secondary);
+    color: var(--c-primary);
 }
 
 .Menu-li:active{
@@ -228,7 +240,7 @@ body{
 
 .Main{
     width: 100%;
-    max-width: 125rem;
+    max-width: 2000px;
     margin: auto;
     min-height: 65vh;
     padding: var(--p-simple) var(--p-double);
@@ -242,14 +254,18 @@ body{
 
 .Marquee{
     width: 100%;
-    margin: 3.125rem auto;
+    height: 6.25rem;
     overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--c-white);
 }
 
 .Marquee-slide{
     width: 200%;
+    margin: 2.5rem auto;
     display: grid;
-    grid-template-columns: repeat(8 , 1fr);
+    grid-template-columns: repeat(16 , 1fr);
     animation: slide 30s linear infinite;
     -webkit-animation: slide 30s linear infinite;
 }
@@ -257,12 +273,12 @@ body{
 .Marquee-text{
     width: 100%;
     min-width: max-content;
-    padding: 0 var(--p-simple);
+    padding: 0 calc(var(--p-simple)*3);
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    border-right: 2px solid var(--c-black);
+    border-right: .125rem solid var(--c-black);
 }
 
 .Marquee-a{
@@ -318,15 +334,15 @@ body{
 /************************************************************
    Media Queries globales
 *************************************************************/
-@media (min-width: 2000px){
+@media (min-width: 125rem){
     .Marquee-slide{
         max-width: 200%;
     }
 }
 
-@media (max-width: 950px){
+@media (max-width: 59.375rem){
     .Main{
-        margin: 6.5rem 0 0;
+        margin: 104px 0 0;
     }
 
     .Header-wrapper{
@@ -338,7 +354,7 @@ body{
     }
     
     .Header-wrapper.Home{
-        background-color: var(--c-primary);
+        background-color: #000000;
     }
 
     .Header-hamburger{
@@ -369,12 +385,12 @@ body{
     }
 
     .Pink{
-        background-color: var(--c-primary);
+        background-color: #000000;
     }
 
     .Header-menu.isActive{
         width: 100%;
-        height: calc( 100vh - 6.5rem );
+        height: calc( 100vh - 104px );
         opacity: 1;
         pointer-events: auto;
         z-index: 2;
@@ -400,7 +416,7 @@ body{
     }
 }
 
-@media (max-width: 500px){
+@media (max-width: 31.25rem){
     .Header-name{
         padding: calc(var(--p-double) / 3.20) 0 calc(var(--p-double) / 3.20) var(--p-simple);
     }
@@ -414,11 +430,11 @@ body{
     }
 
     .Header-menu.isActive{
-        height: calc(100vh - 5rem);
+        height: calc(100vh - 80px);
     }
 
     .Main{
-        margin: 5rem 0 0;
+        margin: 80px 0 0;
     }
 
     .Main-content{

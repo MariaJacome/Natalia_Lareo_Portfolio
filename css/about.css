@@ -29,8 +29,8 @@ Hoja de CSS con estilos de la página about.html
 
 .About-h2,
 .About-p {
-    font-size: var(--fs-texts);
-    line-height: 1.85rem;
+    font-size: var(--fs-about);
+    line-height: 28px;
 }
 
 .Main-accordion {

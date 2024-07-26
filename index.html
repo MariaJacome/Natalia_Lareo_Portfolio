@@ -13,11 +13,13 @@ Descripción -
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Natalia Lareo</title>
 
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/favion_black.ico">
 
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/work.css">
     <script src="js/header.js" defer></script>
+    <script src="js/work.js" defer></script>
 
     <!-- Primary Meta Tags -->
     <meta name="title" content="Natalia Lareo - Portfolio" />
@@ -42,70 +44,68 @@ Descripción -
 
 </head>
 <body class="Background">
-<!--
-Sección cabezera.
-    Nombre - Título → Enlace HOME
-    Icono Hamburguesa → Oculto hasta que pase a mobile
-    Nav con enlaces web
--->
-    <header class="Header">
-        <div class="Header-wrapper Home">
-            <div class="Header-name">
-                <a href="index.html" class="Header-a" title="Go to Home">Nata Lareo</a>
-                <a href="index.html" class="Header-a" title="Go to Home">[Creative Art Director]</a>
-            </div>
-
-            <div class="Header-hamburger">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="Hamburguer-icon">
-                    <use xlink:href="#Hamburguer"/>
-                </svg>
-            </div>
-
-            <div class="Header-nav">
-                <nav class="Header-menu Pink">
-                    <ul class="Menu-ul">
-                        <li class="Menu-li--home">
-                            <a href="work.html" class="Menu-a" title="Go to Work">Work</a>
-                        </li>
-                        <li class="Menu-li--home">
-                            <a href="about.html" class="Menu-a" title="Go to About">About</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <main class="Main">
-        <section class="Main-section">
-            <div class="Section-name">
-            <!--
-            Bloque con la animación de la HOME
-                Insertada a partir de Lottie Files
-            -->
-            <a href="./work.html" class="Section-a" title="Go to Work">
-                <div class="Name-wrapper">
-                    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
-
-                    <dotlottie-player src="https://lottie.host/bd00cda7-e931-4442-b34f-9b5c80bd4740/npEtRjYqcI.json" background="transparent" speed="1" style="width: 100%" loop autoplay></dotlottie-player>
-                </div>
-            </a>
-            </div>
-        </section>
-    </main>
-
     <!--
-        Bloque de iconos svg
-         - Icono Hamburguesa
+    Sección cabezera.
+        Nombre - Título → Enlace HOME
+        Icono Hamburguesa → Oculto hasta que pase a mobile
+        Nav con enlaces web
     -->
-
-    <div class="Icons">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-            <symbol id="Hamburguer">
-                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-            </symbol>
-        </svg>
-    </div>
+        <header class="Header">
+            <div class="Header-wrapper Home">
+                <div class="Header-name">
+                    <a href="index.html" class="Header-a" title="Go to Home">Nata Lareo</a>
+                    <a href="index.html" class="Header-a" title="Go to Home">[Creative Art Director]</a>
+                </div>
     
-</body>
-</html>
+                <div class="Header-hamburger Home">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="Hamburguer-icon Home">
+                        <use xlink:href="#Hamburguer"/>
+                    </svg>
+                </div>
+    
+                <div class="Header-nav">
+                    <nav class="Header-menu Pink">
+                        <ul class="Menu-ul">
+                            <li class="Menu-li--home">
+                                <a href="work.html" class="Menu-a" title="Go to Work">Work</a>
+                            </li>
+                            <li class="Menu-li--home">
+                                <a href="about.html" class="Menu-a" title="Go to About">About</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+    
+        <main class="Main Home">
+            <section class="Main-section">
+                <div class="Section-name">
+                <!--
+                Bloque con la animación de la HOME
+                    Insertada a partir de Lottie Files
+                -->
+                    <div class="Name-wrapper">
+                        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+    
+                        <dotlottie-player src="https://lottie.host/e6cebfc7-d5da-47ce-b695-7f9977dcbe33/0k3wlBMVys.json" background="transparent" speed="1" style="width: 100%" loop autoplay></dotlottie-player>
+                    </div>
+                </div>
+            </section>
+        </main>
+    
+        <!--
+            Bloque de iconos svg
+             - Icono Hamburguesa
+        -->
+    
+        <div class="Icons">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <symbol id="Hamburguer">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                </symbol>
+            </svg>
+        </div>
+        
+    </body>
+    </html>
