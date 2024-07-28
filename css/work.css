@@ -99,7 +99,7 @@ Hoja de CSS con estilos de la página work.html y páginas de proyectos
 
 .Img-picture,
 .Img-archive{
-    width: 100%;
+    width: auto;
     height: 100%;
     object-fit: cover;
     object-position: center;
