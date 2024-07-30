@@ -127,10 +127,6 @@ Hoja de CSS con estilos de la página work.html y páginas de proyectos
     transition: color 0.25s ease-in-out;
 }
 
-.Work-text.Project {
-    margin: 0 0 15vh;
-}
-
 .Work-a.Out{
     text-transform: uppercase;
     text-decoration: underline;
