@@ -30,7 +30,68 @@ Hoja de CSS con estilos de la página about.html
 .About-h2,
 .About-p {
     font-size: var(--fs-about);
-    line-height: 28px;
+    line-height: var(--p-simple);
+}
+
+.About-wrapper {
+    margin: calc(var(--p-simple) / 2) 0 calc(var(--p-simple) / 2);
+}
+
+.Accordion-btn--awards {
+    width: 100%;
+    border-radius: calc(var(--p-simple) / 2);
+    margin: 0 0 calc(var(--p-simple) / 2);
+    color: var(--c-black);
+    background-color: var(--c-white);
+    font-size: var(--fs-texts);
+    font-family: inherit;
+    text-align: left;
+    transition: color 0.25s ease-in-out;
+}
+
+.Accordion-btn--awards:hover {
+    cursor: pointer;    
+    color: var(--c-primary);
+}
+
+.Accordion-btn--awards:active {
+    color: var(--c-secondary);   
+}
+
+.Accordion-awards {
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.Accordion-awards.isActive {
+    height: 14rem;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.Awards-ul {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: calc(var(--p-simple) / 3);
+    padding: calc(var(--p-simple) / 4) 0 0 calc(var(--p-simple) / 4);
+}
+
+.Awards-li {
+    font-size: var(--fs-min);
+    line-height: 1.5rem;
+}
+
+.Awards-content {
+    margin: 0 0 var(--p-simple) 0;
 }
 
 .Main-accordion {
@@ -39,23 +100,6 @@ Hoja de CSS con estilos de la página about.html
    margin: 1.5rem 0 0;
 }
 
-.Awards-content {
-    width: 100%;
-    margin: calc(var(--p-double)/2) 0 calc(var(--p-double)/2);
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-}
-
-.Awards-h3 {
-    width: 100%;
-    margin: 0 0 calc(var(--p-simple) / 2);
-    color: var(--c-black);
-    font-size: var(--fs-texts);
-    transition: color 0.25s ease-in-out;
-}
-
-.Awards-li,
 .Contact-li {
     margin: 0 0 calc(var(--p-simple) / 1.75);
 }
@@ -90,5 +134,17 @@ Hoja de CSS con estilos de la página about.html
     .Main-contact{
         width: 100%;
         max-width: 34.375rem;
+    }
+}
+
+@media (max-width: 600px){
+    .Accordion-content.isActive {
+        height: 6.5rem;
+    }
+}
+
+@media (max-width: 320px){
+    .Accordion-content.isActive {
+        height: 10.5rem;
     }
 }

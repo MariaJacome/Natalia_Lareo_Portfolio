@@ -128,8 +128,8 @@ Bloque de variables
     --c-grey: #727272;
 
     /*Variables de espaciados*/
-    --p-simple: 32px;
-    --p-double: 64px;
+    --p-simple: 2rem;
+    --p-double: 4rem;
 }
 
 html{
@@ -170,7 +170,7 @@ body{
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: center;
-    gap: 4px;
+    gap: .25rem;
 }
 
 .Header-hamburger{
@@ -178,7 +178,7 @@ body{
 }
 
 .Hamburguer-icon{
-    width: 40px;
+    width: 2.5rem;
     fill: var(--c-black);
     cursor: pointer;
 }
@@ -201,7 +201,7 @@ body{
     flex-flow: row nowrap;
     justify-content: flex-end;
     align-items: center;
-    gap: 45px;
+    gap: 2.8125rem;
 }
 
 .Menu-li,
@@ -263,17 +263,16 @@ body{
 
 .Marquee-slide{
     width: 200%;
-    margin: 2.5rem auto;
+    margin: 2.5rem 0;
     display: grid;
-    grid-template-columns: repeat(16 , 1fr);
-    animation: slide 30s linear infinite;
-    -webkit-animation: slide 30s linear infinite;
+    grid-template-columns: repeat(18 , 1fr);
+    animation: slide 45s linear infinite;
+    -webkit-animation: slide 45s linear infinite;
 }
 
 .Marquee-text{
-    width: 100%;
-    min-width: max-content;
-    padding: 0 calc(var(--p-simple)*3);
+    width: 25rem;
+    padding: 0;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -323,10 +322,10 @@ body{
 
 @keyframes slide{
     from{
-        transform: translateX(0%);
+        transform: translateX(0rem);
     }
     to{
-        transform: translateX(-50%);
+        transform: translateX(-225rem);
     }
 }
 
@@ -342,7 +341,7 @@ body{
 
 @media (max-width: 950px){
     .Main{
-        margin: 104px 0 0;
+        margin: 6.5rem 0 0;
     }
 
     .Header-wrapper{
@@ -354,7 +353,7 @@ body{
     }
     
     .Header-wrapper.Home{
-        background-color: #000000;
+        background-color: var(--c-black);
     }
 
     .Header-hamburger{
@@ -385,7 +384,7 @@ body{
     }
 
     .Pink{
-        background-color: #000000;
+        background-color: var(--c-black);
     }
 
     .Header-menu.isActive{
@@ -415,8 +414,8 @@ body{
     }
 
     .Marquee-slide{
-        animation: slide 20s linear infinite;
-        -webkit-animation: slide 20s linear infinite;
+        animation: slide 35s linear infinite;
+        -webkit-animation: slide 35s linear infinite;
     }
 }
 
@@ -438,7 +437,7 @@ body{
     }
 
     .Main{
-        margin: 80px 0 0;
+        margin: 5rem 0 0;
     }
 
     .Main-content{
@@ -446,7 +445,7 @@ body{
     }
 
     .Marquee-slide{
-        animation: slide 10s linear infinite;
-        -webkit-animation: slide 10s linear infinite;
+        animation: slide 30s linear infinite;
+        -webkit-animation: slide 30s linear infinite;
     }
 }
