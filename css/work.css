@@ -113,8 +113,7 @@ Hoja de CSS con estilos de la página work.html y páginas de proyectos
     padding: calc(var(--p-simple) / 1.33) var(--p-double) var(--p-simple);
 }
 
-.Work-text,
-.Work-a{
+.Work-text {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
@@ -130,7 +129,6 @@ Hoja de CSS con estilos de la página work.html y páginas de proyectos
 .Work-a.Out{
     text-transform: uppercase;
     text-decoration: underline;
-    padding: calc(var(--p-simple) / 4) 0 0 calc(var(--p-simple) / 2.66);
 }
 
 .Other-text {
@@ -151,6 +149,7 @@ Hoja de CSS con estilos de la página work.html y páginas de proyectos
 
 .Work-a.Out.Solan{
     min-width: fit-content;
+    padding: calc(var(--p-simple) / 4) 0 0 calc(var(--p-simple) / 2.66);
 }
 
 .Work-a:hover{
@@ -176,6 +175,10 @@ Hoja de CSS con estilos de la página work.html y páginas de proyectos
     max-width: 46.875rem;
     font-weight: 300;
     margin: calc(var(--p-simple) / 4) 0 0;
+}
+
+.Hermit .Work-p{
+    max-width: 48.5rem;
 }
 
 .Work-span--more{
