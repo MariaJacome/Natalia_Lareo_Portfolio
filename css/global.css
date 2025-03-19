@@ -265,7 +265,7 @@ body{
     width: 200%;
     margin: 2.5rem 0;
     display: grid;
-    grid-template-columns: repeat(20 , 1fr);
+    grid-template-columns: repeat(22 , 1fr);
     animation: slide 45s linear infinite;
     -webkit-animation: slide 45s linear infinite;
 }
