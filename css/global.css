@@ -261,6 +261,11 @@ body{
     background-color: var(--c-white);
 }
 
+.Marquee.About{
+    position: sticky;
+    bottom: 0;
+}
+
 .Marquee-slide{
     width: 200%;
     margin: 2.5rem 0;

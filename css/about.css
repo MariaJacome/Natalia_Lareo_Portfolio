@@ -5,7 +5,7 @@ Hoja de CSS con estilos de la página about.html
 *************************************************************/
 
 .Main-content{
-    min-height: 70vh;
+    min-height: 76vh;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -31,6 +31,10 @@ Hoja de CSS con estilos de la página about.html
 .About-p {
     font-size: var(--fs-about);
     line-height: var(--p-simple);
+}
+
+.About-p.Jury {
+    margin: var(--p-simple) 0;
 }
 
 .About-wrapper {
@@ -71,7 +75,7 @@ Hoja de CSS con estilos de la página about.html
 }
 
 .Accordion-awards.isActive {
-    height: 13rem;
+    height: 30rem;
     opacity: 1;
     pointer-events: auto;
 }
@@ -88,6 +92,14 @@ Hoja de CSS con estilos de la página about.html
 .Awards-li {
     font-size: var(--fs-min);
     line-height: 1.5rem;
+}
+
+.Awards-li-last {
+    margin: 0 0 var(--p-simple) 0;
+}
+
+.Awards-li-title {
+    font-size: var(--fs-about);
 }
 
 .Awards-content {
