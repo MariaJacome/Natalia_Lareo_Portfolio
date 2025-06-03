@@ -262,7 +262,7 @@ body{
 }
 
 .Marquee.About{
-    position: sticky;
+    position: fixed;
     bottom: 0;
 }
 

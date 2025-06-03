@@ -16,6 +16,7 @@ Hoja de CSS con estilos de la página about.html
 .Main-about {
     width: 60%;
     max-width: 42rem;
+    margin: 0 0 6.5rem 0;
 }
 
 .About-h2 {
