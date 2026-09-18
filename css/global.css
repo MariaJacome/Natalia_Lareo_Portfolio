@@ -144,6 +144,11 @@ body{
     Estilos relativos al header de la web
 *************************************************************/
 
+.bloqueOculto {
+    display: none;
+    pointer-events: none;
+}
+
 .Header{
     width: 100%;
     max-width: 2000px;
