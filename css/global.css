@@ -272,13 +272,14 @@ body{
 }
 
 .Marquee-slide{
-    width: 200%;
+    width: 100%;
     margin: 2.5rem 0;
     display: grid;
-    grid-template-columns: repeat(22 , 1fr);
-    animation: slide 45s linear infinite;
-    -webkit-animation: slide 45s linear infinite;
+    grid-template-columns: repeat(26 , 1fr);
+    animation: slide 80s linear infinite;
+    -webkit-animation: slide 80s linear infinite;
 }
+
 
 .Marquee-text{
     width: 25rem;
@@ -335,7 +336,7 @@ body{
         transform: translateX(0rem);
     }
     to{
-        transform: translateX(-250rem);
+        transform: translateX(-325rem);
     }
 }
 
