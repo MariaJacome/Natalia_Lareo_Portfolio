@@ -425,8 +425,8 @@ body{
     }
 
     .Marquee-slide{
-        animation: slide 35s linear infinite;
-        -webkit-animation: slide 35s linear infinite;
+        animation: slide 60s linear infinite;
+        -webkit-animation: slide 60s linear infinite;
     }
 }
 
@@ -456,7 +456,7 @@ body{
     }
 
     .Marquee-slide{
-        animation: slide 30s linear infinite;
-        -webkit-animation: slide 30s linear infinite;
+        animation: slide 50s linear infinite;
+        -webkit-animation: slide 50s linear infinite;
     }
 }
